@@ -4,6 +4,8 @@
  */
 package vista;
 
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumn;
 
@@ -97,6 +99,12 @@ public class Page2 extends javax.swing.JPanel {
     private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
     private DefaultTableModel modelo;
-
     
+    public JButton getjAgregarProductoButton1() {
+        return jButton1;
+    }
+
+    public DefaultTableModel getModelo() {
+        return modelo;
+    }    
 }

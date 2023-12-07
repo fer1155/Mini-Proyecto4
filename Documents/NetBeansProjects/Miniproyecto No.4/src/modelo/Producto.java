@@ -1,23 +1,23 @@
 package modelo;
 
 public class Producto {
-    private int numReferencia;
+    private String numReferencia;
     private String nombre;
     private int unidadesDisponibles;
     private int precio;
 
-    public Producto(int numReferencia, String nombre, int unidadesDisponibles, int precio) {
+    public Producto(String numReferencia, String nombre, int unidadesDisponibles, int precio) {
         this.numReferencia = numReferencia;
         this.nombre = nombre;
         this.unidadesDisponibles = unidadesDisponibles;
         this.precio = precio;
     }
 
-    public int getNumReferencia() {
+    public String getNumReferencia() {
         return numReferencia;
     }
 
-    public void setNumReferencia(int numReferencia) {
+    public void setNumReferencia(String numReferencia) {
         this.numReferencia = numReferencia;
     }
 
@@ -45,10 +45,10 @@ public class Producto {
         this.precio = precio;
     }
     
-    /*
+    
     @Override
     public String toString() {
-        return "Nombre Completo: " + nombre + " Número de identificación: " + numId + " Correo: " + correo + " Direccion: " + direccion + " Password: " + password;
-    }*/
+        return "Num referencia: " + numReferencia + " Nombre: " + nombre + " Unidades disponibles: " + unidadesDisponibles + " Precio: " + precio;
+    }
        
 }

@@ -11,6 +11,7 @@ import java.awt.event.MouseListener;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.border.Border;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -266,13 +267,14 @@ public class AdminPrincipalView extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
     private Page1 pg1;
-    private Page2 pg2;
+    private Page2 pg2 = new Page2();
+    private Page2Pnt1 pg3 = new Page2Pnt1();
 
     public void addBtonClienteListener(MouseListener listenControl){
         jButton1.addMouseListener(listenControl);
     }
     
-    public void addBtonbton2Listener(MouseListener listenControl){
+    public void addBtonProductoListener(MouseListener listenControl){
         jButton4.addMouseListener(listenControl);
     }
     
@@ -288,7 +290,7 @@ public class AdminPrincipalView extends javax.swing.JFrame {
         jButton1.addActionListener(listenControl);
     }
     
-    public void addBtonBton2ClienteActionListener(ActionListener listenControl){
+    public void addBtonProductoActionListener(ActionListener listenControl){
         jButton4.addActionListener(listenControl);
     }
     
@@ -320,7 +322,6 @@ public class AdminPrincipalView extends javax.swing.JFrame {
     }
     
     public void mostrarPestana2(){
-        pg2 = new Page2();
         pg2.setSize(720, 368);
         pg2.setLocation(0, 0);
         
@@ -333,9 +334,34 @@ public class AdminPrincipalView extends javax.swing.JFrame {
     public void setTextClientes(String texto){
         pg1.setjTextArea1(texto);
     }
+        
+    public void addBtonAgregarProductoActionListener(ActionListener listenControl){
+        pg2.getjAgregarProductoButton1().addActionListener(listenControl);
+    }
     
-    /*
-    public void setTextProductos(String texto){
-        pg2.setjTextArea2(texto);
-    }*/
+    public DefaultTableModel getModeloTablaPg2(){
+        return pg2.getModelo();
+    }
+    
+    public void mostrarPestanaSubirProductos(){
+        pg3.setSize(720, 368);
+        pg3.setLocation(0, 0);
+        
+        content.removeAll();
+        content.add(pg3);
+        content.revalidate();
+        content.repaint();
+    }
+    
+    public void addBtonaddProductoActionListener(ActionListener listenControl){
+        pg3.getjAgregarButton1().addActionListener(listenControl);
+    }
+    
+    public void addBtonCerrarPage2Pnt1ActionListener(ActionListener listenControl){
+        pg3.getjCerrarButtonPage2Pnt1().addActionListener(listenControl);
+    }
+    
+    public Page2Pnt1 getPage2Pnt1(){
+        return pg3;
+    }
 }

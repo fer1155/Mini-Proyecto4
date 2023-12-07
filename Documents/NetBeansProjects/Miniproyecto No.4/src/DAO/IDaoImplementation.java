@@ -18,6 +18,7 @@ public class IDaoImplementation implements IDao{
     public IDaoImplementation() {
         this.clientes = new ArrayList<>();
         this.admins = new ArrayList<>();
+        this.productos = new ArrayList<>();
         Usuario usuarioAdmin = new Usuario("Fer", 1, "", "", "123", true); 
         admins.add(usuarioAdmin);
     }
@@ -81,7 +82,7 @@ public class IDaoImplementation implements IDao{
     }
 
     @Override
-    public boolean addProducto(Producto producto) {    
+    public boolean addProducto(Producto producto) {        
         productos.add(producto);
         return true;
     }

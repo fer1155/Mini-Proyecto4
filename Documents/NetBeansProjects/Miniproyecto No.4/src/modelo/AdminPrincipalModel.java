@@ -13,8 +13,8 @@ public class AdminPrincipalModel {
         return modeloGeneral.obtenerClientes();
     }
     
-    public void registrarProducto(Producto producto){
-        modeloGeneral.agregarProducto(producto);
+    public boolean registrarProducto(Producto producto){
+        return modeloGeneral.agregarProducto(producto);
     }
     
     public ArrayList<Producto> obtenerProductos(){
