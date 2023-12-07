@@ -47,7 +47,7 @@ public class LoginController {
                 Usuario adminObtenido = modelo.obtenerAdmin(vista.getNombreTextField().getText(), vista.getContrasenaTextField().getText());
                 if(adminObtenido != null){
                     vistaPrincipalAdmin = new AdminPrincipalView();
-                    modeloPrincipalAdmin = new AdminPrincipalModel();
+                    modeloPrincipalAdmin = new AdminPrincipalModel(modelo);
                     controladorPrincipalAdmin = new AdminPrincipalController(vistaPrincipalAdmin, modeloPrincipalAdmin);
                     vista.dispose();
                 }

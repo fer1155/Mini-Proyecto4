@@ -100,7 +100,7 @@ public class AdminPrincipalView extends javax.swing.JFrame {
 
         jButton4.setFont(new java.awt.Font("Verdana", 0, 13)); // NOI18N
         jButton4.setForeground(new java.awt.Color(153, 153, 153));
-        jButton4.setText("#2");
+        jButton4.setText("Productos");
         jButton4.setBorder(null);
         jButton4.setContentAreaFilled(false);
         jButton4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -265,7 +265,9 @@ public class AdminPrincipalView extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
-    
+    private Page1 pg1;
+    private Page2 pg2;
+
     public void addBtonClienteListener(MouseListener listenControl){
         jButton1.addMouseListener(listenControl);
     }
@@ -307,7 +309,7 @@ public class AdminPrincipalView extends javax.swing.JFrame {
     }
     
     public void mostrarPestanaClientes(){
-        Page1 pg1 = new Page1();
+        pg1 = new Page1();
         pg1.setSize(720, 368);
         pg1.setLocation(0, 0);
         
@@ -318,7 +320,7 @@ public class AdminPrincipalView extends javax.swing.JFrame {
     }
     
     public void mostrarPestana2(){
-        Page2 pg2 = new Page2();
+        pg2 = new Page2();
         pg2.setSize(720, 368);
         pg2.setLocation(0, 0);
         
@@ -327,4 +329,13 @@ public class AdminPrincipalView extends javax.swing.JFrame {
         content.revalidate();
         content.repaint();
     }
+    
+    public void setTextClientes(String texto){
+        pg1.setjTextArea1(texto);
+    }
+    
+    /*
+    public void setTextProductos(String texto){
+        pg2.setjTextArea2(texto);
+    }*/
 }

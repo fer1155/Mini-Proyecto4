@@ -4,7 +4,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.ArrayList;
 import modelo.AdminPrincipalModel;
+import modelo.Usuario;
 import vista.AdminPrincipalView;
 
 public class AdminPrincipalController {
@@ -55,11 +57,19 @@ public class AdminPrincipalController {
         @Override
         public void actionPerformed(ActionEvent e) {
             if(e.getActionCommand().equalsIgnoreCase("Clientes")){
-                System.out.println("Hola");
+                ArrayList<Usuario> clientes = modelo.obtenerClientes();
+                String texto = "";
+                int num = 1;
+                for(Usuario cliente : clientes){
+                    texto += num + ") "+ cliente.toString() + "\n";
+                    num += 1;
+                }
+                
                 vista.mostrarPestanaClientes();
+                vista.setTextClientes(texto);
             }
             
-            if(e.getActionCommand().equalsIgnoreCase("#2")){
+            if(e.getActionCommand().equalsIgnoreCase("Productos")){
                 System.out.println("Hola 2");
                 vista.mostrarPestana2();
             }

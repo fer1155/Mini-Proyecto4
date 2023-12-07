@@ -5,12 +5,14 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import modelo.Producto;
 import modelo.Usuario;
 
 
 public class IDaoImplementation implements IDao{
     ArrayList<Usuario> clientes;
     ArrayList<Usuario> admins;
+    ArrayList<Producto> productos;
     private Usuario usuarioActual;
 
     public IDaoImplementation() {
@@ -54,6 +56,11 @@ public class IDaoImplementation implements IDao{
     }
     
     @Override
+    public ArrayList<Usuario> getArrayClientes(){
+        return clientes;
+    }
+    
+    @Override
     public Usuario getAdmin(String adminNombre, String adminContraseña) {
         for(Usuario admin : admins) {
             if(adminNombre.equals(admin.getNombre()) && adminContraseña.equals(admin.getPassword())){
@@ -71,6 +78,17 @@ public class IDaoImplementation implements IDao{
     @Override
     public boolean deleteUsario(String idUsuarioAEliminar) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public boolean addProducto(Producto producto) {    
+        productos.add(producto);
+        return true;
+    }
+
+    @Override
+    public ArrayList<Producto> getArrayProductos() {    
+        return productos;
     }
     
 }
