@@ -5,6 +5,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import modelo.Compra;
 import modelo.Producto;
 import modelo.Usuario;
 
@@ -13,12 +14,14 @@ public class IDaoImplementation implements IDao{
     ArrayList<Usuario> clientes;
     ArrayList<Usuario> admins;
     ArrayList<Producto> productos;
+    ArrayList<Compra> registroCompras;
     private Usuario usuarioActual;
 
     public IDaoImplementation() {
         this.clientes = new ArrayList<>();
         this.admins = new ArrayList<>();
         this.productos = new ArrayList<>();
+        this.registroCompras = new ArrayList<>();
         Usuario usuarioAdmin = new Usuario("Fer", 1, "", "", "123", true); 
         admins.add(usuarioAdmin);
     }
@@ -91,5 +94,35 @@ public class IDaoImplementation implements IDao{
     public ArrayList<Producto> getArrayProductos() {    
         return productos;
     }
-    
+
+    @Override
+    public Producto getProducto(String numSerie) {
+        for(Producto producto : productos) {
+            if(producto.getNumReferencia().equals(numSerie)){
+                return producto;
+            }                            
+        }
+        return null;
+    }
+
+    @Override
+    public boolean addCompra(Compra registroCompra) {
+        registroCompras.add(registroCompra);
+        return true;
+    }
+
+    @Override
+    public ArrayList<Compra> getArrayCompras() {
+        return registroCompras;
+    }
+
+    @Override
+    public Usuario getUsuarioActual() {
+        return usuarioActual;
+    }
+
+    @Override
+    public void setUsuarioActual(Usuario usuarioActual) {
+        this.usuarioActual = usuarioActual;
+    }
 }

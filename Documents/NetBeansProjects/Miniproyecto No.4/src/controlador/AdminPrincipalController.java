@@ -7,24 +7,32 @@ import java.awt.event.MouseEvent;
 import static java.lang.Integer.parseInt;
 import java.util.ArrayList;
 import modelo.AdminPrincipalModel;
+import modelo.LoginModel;
 import modelo.Producto;
 import modelo.Usuario;
 import vista.AdminPrincipalView;
+import vista.LoginView;
 
 public class AdminPrincipalController {
     private AdminPrincipalView vista;
     private AdminPrincipalModel modelo;
+    private LoginView vistaLogin;
+    private LoginModel modeloLogin;
+    private LoginController controladorLogin;
 
     public AdminPrincipalController(AdminPrincipalView vista, AdminPrincipalModel modelo) {
         this.vista = vista;
         this.modelo = modelo;
         vista.setVisible(true);
+        actualizarTablaProductos();
         this.vista.addBtonClienteListener(new accionesMouseBton1());
         this.vista.addBtonProductoListener(new accionesMouseBton2());
-        this.vista.addBtonbton3Listener(new accionesMouseBton3());
+        this.vista.addBtonCompraListener(new accionesMouseBton3());
         this.vista.addBtonbton4Listener(new accionesMouseBton4());
         this.vista.addBtonClienteActionListener(new acciones());
         this.vista.addBtonProductoActionListener(new acciones());
+        this.vista.addBtonComprasActionListener(new acciones());
+        this.vista.addBtonCerrarSesionActionListener(new acciones());
         this.vista.addBtonAgregarProductoActionListener(new acciones2());
         this.vista.addBtonaddProductoActionListener(new acciones2());
         this.vista.addBtonCerrarPage2Pnt1ActionListener(new acciones2());
@@ -76,6 +84,16 @@ public class AdminPrincipalController {
             
             if(e.getActionCommand().equalsIgnoreCase("Productos")){
                 vista.mostrarPestana2();
+            }
+            
+            if(e.getActionCommand().equalsIgnoreCase("Compras")){
+                vista.mostrarPestanaComprasPrincipal();
+            }
+            
+            if(e.getActionCommand().equalsIgnoreCase("Cerrar sesion")){
+                vistaLogin = new LoginView();
+                controladorLogin = new LoginController(vistaLogin, modelo.getLoginModel());
+                vista.dispose();
             }
         }
     }

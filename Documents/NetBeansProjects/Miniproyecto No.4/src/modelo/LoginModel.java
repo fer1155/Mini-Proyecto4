@@ -34,4 +34,24 @@ public class LoginModel {
     public ArrayList<Producto> obtenerProductos(){
         return this.Dao.getArrayProductos();
     }
+    
+    public Producto obtenerProducto(String numeroSerie){
+        return this.Dao.getProducto(numeroSerie);
+    }
+    
+    public boolean agregarCompra(Compra compra){
+        return this.Dao.addCompra(compra);
+    }
+    
+    public ArrayList<Compra> obtenerArrayCompras(){
+        return this.Dao.getArrayCompras();
+    }
+
+    public Usuario obtenerUsuarioActual(){
+        return this.Dao.getUsuarioActual();
+    }
+    
+    public void setiarUsuarioActual(Usuario usuario){
+        this.Dao.setUsuarioActual(usuario);
+    }
 }

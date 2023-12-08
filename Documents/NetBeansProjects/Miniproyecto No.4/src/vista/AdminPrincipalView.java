@@ -66,6 +66,7 @@ public class AdminPrincipalView extends javax.swing.JFrame {
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         content = new javax.swing.JPanel();
+        jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -114,7 +115,7 @@ public class AdminPrincipalView extends javax.swing.JFrame {
 
         jButton5.setFont(new java.awt.Font("Verdana", 0, 13)); // NOI18N
         jButton5.setForeground(new java.awt.Color(153, 153, 153));
-        jButton5.setText("#3");
+        jButton5.setText("Compras");
         jButton5.setBorder(null);
         jButton5.setContentAreaFilled(false);
         jButton5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -165,17 +166,30 @@ public class AdminPrincipalView extends javax.swing.JFrame {
             .addGap(0, 368, Short.MAX_VALUE)
         );
 
+        jButton3.setText("Cerrar sesion");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(content, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton3)
+                .addGap(44, 44, 44))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(48, Short.MAX_VALUE)
+                .addContainerGap(19, Short.MAX_VALUE)
+                .addComponent(jButton3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(content, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -222,6 +236,10 @@ public class AdminPrincipalView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton3ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -261,6 +279,7 @@ public class AdminPrincipalView extends javax.swing.JFrame {
     private javax.swing.JPanel content;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JPanel jPanel1;
@@ -268,7 +287,8 @@ public class AdminPrincipalView extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
     private Page1 pg1;
     private Page2 pg2 = new Page2();
-    private Page2Pnt1 pg3 = new Page2Pnt1();
+    private Page2Pnt1 pg2Pnt1 = new Page2Pnt1();
+    private PageComprasPrincipal pg3 = new PageComprasPrincipal();
 
     public void addBtonClienteListener(MouseListener listenControl){
         jButton1.addMouseListener(listenControl);
@@ -278,7 +298,7 @@ public class AdminPrincipalView extends javax.swing.JFrame {
         jButton4.addMouseListener(listenControl);
     }
     
-    public void addBtonbton3Listener(MouseListener listenControl){
+    public void addBtonCompraListener(MouseListener listenControl){
         jButton5.addMouseListener(listenControl);
     }
     
@@ -292,6 +312,14 @@ public class AdminPrincipalView extends javax.swing.JFrame {
     
     public void addBtonProductoActionListener(ActionListener listenControl){
         jButton4.addActionListener(listenControl);
+    }
+    
+    public void addBtonComprasActionListener(ActionListener listenControl){
+        jButton5.addActionListener(listenControl);
+    }
+    
+    public void addBtonCerrarSesionActionListener(ActionListener listenControl){
+        jButton3.addActionListener(listenControl);
     }
     
     public JButton getjButton1() {
@@ -344,6 +372,28 @@ public class AdminPrincipalView extends javax.swing.JFrame {
     }
     
     public void mostrarPestanaSubirProductos(){
+        pg2Pnt1.setSize(720, 368);
+        pg2Pnt1.setLocation(0, 0);
+        
+        content.removeAll();
+        content.add(pg2Pnt1);
+        content.revalidate();
+        content.repaint();
+    }
+    
+    public void addBtonaddProductoActionListener(ActionListener listenControl){
+        pg2Pnt1.getjAgregarButton1().addActionListener(listenControl);
+    }
+    
+    public void addBtonCerrarPage2Pnt1ActionListener(ActionListener listenControl){
+        pg2Pnt1.getjCerrarButtonPage2Pnt1().addActionListener(listenControl);
+    }
+    
+    public Page2Pnt1 getPage2Pnt1(){
+        return pg2Pnt1;
+    }
+    
+    public void mostrarPestanaComprasPrincipal(){
         pg3.setSize(720, 368);
         pg3.setLocation(0, 0);
         
@@ -351,17 +401,5 @@ public class AdminPrincipalView extends javax.swing.JFrame {
         content.add(pg3);
         content.revalidate();
         content.repaint();
-    }
-    
-    public void addBtonaddProductoActionListener(ActionListener listenControl){
-        pg3.getjAgregarButton1().addActionListener(listenControl);
-    }
-    
-    public void addBtonCerrarPage2Pnt1ActionListener(ActionListener listenControl){
-        pg3.getjCerrarButtonPage2Pnt1().addActionListener(listenControl);
-    }
-    
-    public Page2Pnt1 getPage2Pnt1(){
-        return pg3;
     }
 }

@@ -54,9 +54,10 @@ public class LoginController {
                 
                 Usuario usuarioObtenido = modelo.obtenerUsario(vista.getNombreTextField().getText(), vista.getContrasenaTextField().getText());
                 if(usuarioObtenido != null){
+                    modelo.setiarUsuarioActual(usuarioObtenido);
                     System.out.println("Usuario encontrado");
                     vistaPrincipalCliente = new ClientePrincipalView();
-                    modeloPrincipalCliente = new ClientePrincipalModel();
+                    modeloPrincipalCliente = new ClientePrincipalModel(modelo);
                     controladorPrincipalCliente = new ClientePrincipalController(vistaPrincipalCliente, modeloPrincipalCliente);
                     vista.dispose();
                 }

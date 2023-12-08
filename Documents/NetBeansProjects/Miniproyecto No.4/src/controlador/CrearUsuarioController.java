@@ -34,7 +34,6 @@ public class CrearUsuarioController {
             
             if(e.getActionCommand().equalsIgnoreCase("Cancelar")){
                 vistaLogin = new LoginView();
-                //modeloLogin = new LoginModel();
                 controladorLogin = new LoginController(vistaLogin, modelo.getLoginModel());
                 vista.dispose();
             }

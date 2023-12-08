@@ -20,4 +20,8 @@ public class AdminPrincipalModel {
     public ArrayList<Producto> obtenerProductos(){
         return modeloGeneral.obtenerProductos();
     }
+    
+    public LoginModel getLoginModel(){
+        return modeloGeneral;
+    }
 }

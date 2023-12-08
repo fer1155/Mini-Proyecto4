@@ -4,6 +4,8 @@
  */
 package vista;
 
+import java.awt.event.ActionListener;
+import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -28,45 +30,30 @@ public class ClientePrincipalView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel2 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        content = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        modelo = new DefaultTableModel();
-        modelo.addColumn("Id");
-        modelo.addColumn("Pepe");
-        modelo.addColumn("Nombre");
-        jTable1.setModel(modelo);
-        jScrollPane1.setViewportView(jTable1);
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(38, 38, 38)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 357, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(303, Short.MAX_VALUE))
+        javax.swing.GroupLayout contentLayout = new javax.swing.GroupLayout(content);
+        content.setLayout(contentLayout);
+        contentLayout.setHorizontalGroup(
+            contentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 700, Short.MAX_VALUE)
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(59, 59, 59)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(136, Short.MAX_VALUE))
+        contentLayout.setVerticalGroup(
+            contentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 380, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(content, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(content, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -108,9 +95,56 @@ public class ClientePrincipalView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JPanel content;
     // End of variables declaration//GEN-END:variables
-    private DefaultTableModel modelo;
+    private Page3 pg3 = new Page3();
+    private Page3Pnt1 pg3Pnt1 = new Page3Pnt1();
+
+    public DefaultTableModel getModelo() {
+        return pg3.getModelo();
+    }
+    
+    public JTable getjTable1() {
+        return pg3.getjTable1();
+    }
+    
+    public void mostrarPestanaClientes(){
+        pg3.setSize(720, 368);
+        pg3.setLocation(0, 0);
+        
+        content.removeAll();
+        content.add(pg3);
+        content.revalidate();
+        content.repaint();
+    }
+    
+    public void addBtonComprarProductoActionListener(ActionListener listenControl){
+        pg3.getjButtonComprarProducto().addActionListener(listenControl);
+    }
+    
+    public void addBtonCerrarSesionActionListener(ActionListener listenControl){
+        pg3.getjButtonCerrarSesion().addActionListener(listenControl);
+    }
+    
+    public void mostrarPestanaComprarProductos(){
+        pg3Pnt1.setSize(720, 368);
+        pg3Pnt1.setLocation(0, 0);
+        
+        content.removeAll();
+        content.add(pg3Pnt1);
+        content.revalidate();
+        content.repaint();
+    }
+
+    public Page3Pnt1 getPg3Pnt1() {
+        return pg3Pnt1;
+    }
+    
+    public void addBtonComprarActionListener(ActionListener listenControl){
+        pg3Pnt1.getjButtonComprar().addActionListener(listenControl);
+    }
+    
+    public void addBtonCancelarActionListener(ActionListener listenControl){
+        pg3Pnt1.getjButtonCancelar().addActionListener(listenControl);
+    }
 }
