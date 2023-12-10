@@ -88,4 +88,20 @@ public class AdminPrincipalModel {
     public boolean cargarUsuariostxt(){
         return modeloGeneral.cargarUsuariostxt();
     }
+    
+    public boolean cargarProductotxt(){
+        return modeloGeneral.cargarProductostxt();
+    }
+    
+    public boolean cargarComprastxt(){
+        return modeloGeneral.cargarComprastxt();
+    }
+    
+    public boolean cargarProvedorestxt(){
+        return modeloGeneral.cargarProvedorestxt();
+    }
+    
+    public boolean cargarPedidostxt(){
+        return modeloGeneral.cargarPedidostxt();
+    }
 }

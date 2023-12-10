@@ -118,4 +118,20 @@ public class LoginModel {
     public boolean cargarUsuariostxt(){
         return this.Dao.cargarUsuariostxt();
     }
+    
+    public boolean cargarProductostxt(){
+        return this.Dao.cargarProductostxt();
+    }
+    
+    public boolean cargarComprastxt(){
+        return this.Dao.cargarComprastxt();
+    }
+    
+    public boolean cargarProvedorestxt(){
+        return this.Dao.cargarProveedortxt();
+    }
+    
+    public boolean cargarPedidostxt(){
+        return this.Dao.cargarPedidotxt();
+    }
 }

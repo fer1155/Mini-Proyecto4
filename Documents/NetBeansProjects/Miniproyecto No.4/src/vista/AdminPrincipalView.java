@@ -70,7 +70,6 @@ public class AdminPrincipalView extends javax.swing.JFrame {
         jButton6 = new javax.swing.JButton();
         content = new javax.swing.JPanel();
         jButton3 = new javax.swing.JButton();
-        jButtonCargarInfo = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -193,13 +192,6 @@ public class AdminPrincipalView extends javax.swing.JFrame {
             }
         });
 
-        jButtonCargarInfo.setText("Cargar info (.txt)");
-        jButtonCargarInfo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonCargarInfoActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -208,8 +200,6 @@ public class AdminPrincipalView extends javax.swing.JFrame {
             .addComponent(content, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButtonCargarInfo)
-                .addGap(26, 26, 26)
                 .addComponent(jButton3)
                 .addGap(44, 44, 44))
         );
@@ -217,9 +207,7 @@ public class AdminPrincipalView extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(19, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton3)
-                    .addComponent(jButtonCargarInfo))
+                .addComponent(jButton3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -275,10 +263,6 @@ public class AdminPrincipalView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton6ActionPerformed
 
-    private void jButtonCargarInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCargarInfoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonCargarInfoActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -322,7 +306,6 @@ public class AdminPrincipalView extends javax.swing.JFrame {
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButtonCargarInfo;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
@@ -381,10 +364,6 @@ public class AdminPrincipalView extends javax.swing.JFrame {
     
     public void addBtonCerrarSesionActionListener(ActionListener listenControl){
         jButton3.addActionListener(listenControl);
-    }
-    
-    public void addBtonCargarInfoSesionActionListener(ActionListener listenControl){
-        jButtonCargarInfo.addActionListener(listenControl);
     }
     
     public JButton getjButton1() {

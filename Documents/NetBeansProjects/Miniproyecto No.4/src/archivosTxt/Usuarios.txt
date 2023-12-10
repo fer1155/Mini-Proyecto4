@@ -1,6 +1,6 @@
-Nombre: Fer
-Número de identificación: 123
-Correo: carfd
-Dirección: fsdfs
-Password: 1232
+Nombre: Pepe
+NúmeroDeIdentificación: 12321
+Correo: sdfsd
+Dirección: sdffd
+Password: sdfsdfsdf
 

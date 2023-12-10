@@ -77,4 +77,11 @@ public class LoginController {
         }
     }
     
+    public void cargarInfo(){
+        modelo.cargarUsuariostxt();
+        modelo.cargarProductostxt();
+        modelo.cargarComprastxt();
+        modelo.cargarProvedorestxt();
+        modelo.cargarPedidostxt();
+    } 
 }

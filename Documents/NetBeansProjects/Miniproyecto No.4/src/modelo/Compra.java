@@ -15,6 +15,14 @@ public class Compra {
         this.unidadesCompradas = unidadesCompradas;
         this.precioTotalComprado = precioTotalComprado;
     }
+    
+    public Compra(String nombreDelComprador, int id, String producto, int unidadesCompradas, int precioTotalComprado) {
+        this.nombreDelComprador = nombreDelComprador;
+        this.numId = id;
+        this.producto = producto;
+        this.unidadesCompradas = unidadesCompradas;
+        this.precioTotalComprado = precioTotalComprado;
+    }
 
     public Usuario getUsuario() {
         return usuario;

@@ -40,5 +40,14 @@ public interface IDao {
     public boolean deletePedido(int id, String producto);
     public void updatePedido();
     
+    public boolean registrarUsuariostxt();
     public boolean cargarUsuariostxt();
+    public boolean registrarProductostxt();
+    public boolean cargarProductostxt();
+    public boolean registrarComprastxt();
+    public boolean cargarComprastxt();
+    public boolean registrarProveedortxt();
+    public boolean cargarProveedortxt();
+    public boolean registrarPedidotxt();
+    public boolean cargarPedidotxt();
 }

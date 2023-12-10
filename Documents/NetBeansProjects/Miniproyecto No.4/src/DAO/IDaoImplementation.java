@@ -94,6 +94,7 @@ public class IDaoImplementation implements IDao{
         registrarUsuariostxt();
     }
 
+    @Override
     public boolean registrarUsuariostxt(){
         String rutaArchivo = "src/archivosTxt/Usuarios.txt";
         
@@ -110,7 +111,7 @@ public class IDaoImplementation implements IDao{
             for (Usuario usuario : clientes) {
                 bufferEscritor.write("Nombre: " + usuario.getNombre());
                 bufferEscritor.newLine();
-                bufferEscritor.write("Número de identificación: " + usuario.getNumId());
+                bufferEscritor.write("NúmeroDeIdentificación: " + usuario.getNumId());
                 bufferEscritor.newLine();
                 bufferEscritor.write("Correo: " + usuario.getCorreo());
                 bufferEscritor.newLine();
@@ -147,39 +148,6 @@ public class IDaoImplementation implements IDao{
                     Usuario nuevoUsuario = new Usuario(nombre, id, correo, direccion, Password, false);
                     clientes.add(nuevoUsuario);
                 }
-                    
-                
-                /*
-
-                //Divide la línea en atributos usando ","
-                String[] atributos = linea.split(",");
-
-                // Inicializa variables
-                String nombre = null;
-                int id = -1;
-
-                
-                // Procesa cada atributo
-                for (String atributo : atributos) {
-                    String[] partes = atributo.split(":");
-                    String tipo = partes[0];
-                    String valor = partes[1];
-
-                    // Asigna valor al atributo correspondiente
-                    switch (tipo) {
-                        case "nombre":
-                            nombre = valor;
-                            break;
-                        case "id":
-                            id = Integer.parseInt(valor);
-                            break;
-                        // Puedes agregar más casos según tus necesidades
-                    }
-                }
-
-                // Crea un objeto Persona y agrégalo a la lista
-                Persona persona = new Persona(nombre, id);
-                personas.add(persona);*/
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -226,6 +194,7 @@ public class IDaoImplementation implements IDao{
         registrarProductostxt();
     }
     
+    @Override
     public boolean registrarProductostxt(){
         String rutaArchivo = "src/archivosTxt/Productos.txt";
         try{
@@ -233,17 +202,51 @@ public class IDaoImplementation implements IDao{
             FileWriter archivo = new FileWriter(rutaArchivo);
             BufferedWriter bufferEscritor = new BufferedWriter(archivo);
             
+            /*
             for(int i = 0; i < productos.size() ; i++){
                 bufferEscritor.write(productos.get(i).toString());
                 bufferEscritor.newLine(); 
-            }
+            }*/
             
+            for (Producto producto : productos) {
+                bufferEscritor.write("NumDeReferencia: " + producto.getNumReferencia());
+                bufferEscritor.newLine();
+                bufferEscritor.write("Nombre: " + producto.getNombre());
+                bufferEscritor.newLine();
+                bufferEscritor.write("UnidadesDisponibles: " + producto.getUnidadesDisponibles());
+                bufferEscritor.newLine();
+                bufferEscritor.write("Precio: " + producto.getPrecio());
+                bufferEscritor.newLine();
+                bufferEscritor.newLine(); // Agregar una línea en blanco entre usuarios
+            }
+            bufferEscritor.flush();
             bufferEscritor.close();
             return true;
         }catch (IOException e){
             e.printStackTrace();
         }
         
+        return false;
+    }
+    
+    @Override
+    public boolean cargarProductostxt(){
+        try (BufferedReader br = new BufferedReader(new FileReader("src/archivosTxt/Productos.txt"))) {
+            String linea;
+            while ((linea = br.readLine()) != null) {
+                if (linea.startsWith("NumDeReferencia:")) {
+                    String NumDeReferencia = linea.split(":")[1].trim();
+                    String nombre = br.readLine().split(":")[1].trim();
+                    int unidadesDisponibles = Integer.parseInt(br.readLine().split(":")[1].trim());
+                    int precio = Integer.parseInt(br.readLine().split(":")[1].trim());
+
+                    Producto nuevoProducto = new Producto(NumDeReferencia, nombre, unidadesDisponibles, precio);
+                    productos.add(nuevoProducto);
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         return false;
     }
 
@@ -259,6 +262,7 @@ public class IDaoImplementation implements IDao{
         return registroCompras;
     }
     
+    @Override
     public boolean registrarComprastxt(){
         String rutaArchivo = "src/archivosTxt/RegistroCompras.txt";
         try{
@@ -266,17 +270,55 @@ public class IDaoImplementation implements IDao{
             FileWriter archivo = new FileWriter(rutaArchivo);
             BufferedWriter bufferEscritor = new BufferedWriter(archivo);
             
+            /*
             for(int i = 0; i < registroCompras.size() ; i++){
                 bufferEscritor.write(registroCompras.get(i).toString());
                 bufferEscritor.newLine(); 
-            }
+            }*/
             
+            for (Compra compra : registroCompras) {
+                bufferEscritor.write("NombreDelComprador: " + compra.getNombreDelComprador());
+                bufferEscritor.newLine();
+                bufferEscritor.write("NumeroID: " + compra.getNumId());
+                bufferEscritor.newLine();
+                bufferEscritor.write("Producto: " + compra.getProducto());
+                bufferEscritor.newLine();
+                bufferEscritor.write("UnidadesCompradas: " + compra.getUnidadesCompradas());
+                bufferEscritor.newLine();
+                bufferEscritor.write("PrecioTotalComprado: " + compra.getPrecioTotalComprado());
+                bufferEscritor.newLine();
+                bufferEscritor.newLine(); // Agregar una línea en blanco entre usuarios
+            }
+            bufferEscritor.flush();
             bufferEscritor.close();
             return true;
         }catch (IOException e){
             e.printStackTrace();
         }
         
+        return false;
+    }
+    
+    @Override
+    public boolean cargarComprastxt(){
+        try (BufferedReader br = new BufferedReader(new FileReader("src/archivosTxt/RegistroCompras.txt"))) {
+            String linea;
+            while ((linea = br.readLine()) != null) {
+                if (linea.startsWith("NombreDelComprador:")) {
+                    String nombre = linea.split(":")[1].trim();
+                    int id = Integer.parseInt(br.readLine().split(":")[1].trim());
+                    String producto = br.readLine().split(":")[1].trim();
+                    //System.out.println(producto);
+                    int unidades = Integer.parseInt(br.readLine().split(":")[1].trim());
+                    int precioTotal = Integer.parseInt(br.readLine().split(":")[1].trim());
+
+                    Compra nuevaCompra = new Compra(nombre, id, producto, unidades, precioTotal);
+                    registroCompras.add(nuevaCompra);
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         return false;
     }
 
@@ -329,6 +371,7 @@ public class IDaoImplementation implements IDao{
         return false;
     }
     
+    @Override
     public boolean registrarProveedortxt(){
         String rutaArchivo = "src/archivosTxt/Proveedores.txt";
         try{
@@ -336,17 +379,57 @@ public class IDaoImplementation implements IDao{
             FileWriter archivo = new FileWriter(rutaArchivo);
             BufferedWriter bufferEscritor = new BufferedWriter(archivo);
             
+            /*
             for(int i = 0; i < provedores.size() ; i++){
                 bufferEscritor.write(provedores.get(i).toString());
                 bufferEscritor.newLine(); 
-            }
+            }*/
             
+            for (Provedor provedor : provedores) {
+                bufferEscritor.write("ID: " + provedor.getId());
+                bufferEscritor.newLine();
+                bufferEscritor.write("Nombre: " + provedor.getNombre());
+                bufferEscritor.newLine();
+                bufferEscritor.write("Telefono: " + provedor.getTelefono());
+                bufferEscritor.newLine();
+                bufferEscritor.write("Dirección: " + provedor.getDireccion());
+                bufferEscritor.newLine();
+                bufferEscritor.write("ProductoAVender: " + provedor.getProductoAVender());
+                bufferEscritor.newLine();
+                bufferEscritor.write("ValorDelProductoAVender: " + provedor.getValorProductoAVender());
+                bufferEscritor.newLine();
+                bufferEscritor.newLine(); // Agregar una línea en blanco entre usuarios
+            }
+            bufferEscritor.flush();
             bufferEscritor.close();
             return true;
         }catch (IOException e){
             e.printStackTrace();
         }
         
+        return false;
+    }
+    
+    @Override
+    public boolean cargarProveedortxt(){
+        try (BufferedReader br = new BufferedReader(new FileReader("src/archivosTxt/Proveedores.txt"))) {
+            String linea;
+            while ((linea = br.readLine()) != null) {
+                if (linea.startsWith("ID:")) {
+                    int id = Integer.parseInt(linea.split(":")[1].trim());
+                    String nombre = br.readLine().split(":")[1].trim();
+                    int telefono = Integer.parseInt(br.readLine().split(":")[1].trim());
+                    String direccion = br.readLine().split(":")[1].trim();
+                    String productoAVender = br.readLine().split(":")[1].trim();
+                    int valorProductoAVender = Integer.parseInt(br.readLine().split(":")[1].trim());
+
+                    Provedor nuevoProveedor = new Provedor(id,nombre,telefono,direccion,productoAVender,valorProductoAVender);
+                    provedores.add(nuevoProveedor);
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         return false;
     }
     
@@ -391,17 +474,57 @@ public class IDaoImplementation implements IDao{
             FileWriter archivo = new FileWriter(rutaArchivo);
             BufferedWriter bufferEscritor = new BufferedWriter(archivo);
             
+            /*
             for(int i = 0; i < pedidos.size() ; i++){
                 bufferEscritor.write(pedidos.get(i).toString());
                 bufferEscritor.newLine(); 
-            }
+            }*/
             
+            for (Pedido pedido : pedidos) {
+                bufferEscritor.write("Nombre: " + pedido.getNombreProvedor());
+                bufferEscritor.newLine();
+                bufferEscritor.write("ID: " + pedido.getIdProvedor());
+                bufferEscritor.newLine();
+                bufferEscritor.write("Producto: " + pedido.getProducto());
+                bufferEscritor.newLine();
+                bufferEscritor.write("PrecioProducto: " + pedido.getPrecioProducto());
+                bufferEscritor.newLine();
+                bufferEscritor.write("CantidadPedido: " + pedido.getCantidadPedido());
+                bufferEscritor.newLine();
+                bufferEscritor.write("PrecioTotalPedido: " + pedido.getPrecioTotalPedido());
+                bufferEscritor.newLine();
+                bufferEscritor.newLine(); // Agregar una línea en blanco entre usuarios
+            }
+            bufferEscritor.flush();
             bufferEscritor.close();
             return true;
         }catch (IOException e){
             e.printStackTrace();
         }
         
+        return false;
+    }
+    
+    @Override
+    public boolean cargarPedidotxt(){
+        try (BufferedReader br = new BufferedReader(new FileReader("src/archivosTxt/Pedidos.txt"))) {
+            String linea;
+            while ((linea = br.readLine()) != null) {
+                if (linea.startsWith("Nombre:")) {
+                    String nombre = linea.split(":")[1].trim();
+                    int id = Integer.parseInt(br.readLine().split(":")[1].trim());
+                    String producto = br.readLine().split(":")[1].trim();
+                    int precioProducto = Integer.parseInt(br.readLine().split(":")[1].trim());
+                    int cantidadPedido = Integer.parseInt(br.readLine().split(":")[1].trim());
+                    int PrecioTotalPedido = Integer.parseInt(br.readLine().split(":")[1].trim());
+                    
+                    Pedido nuevoPedido = new Pedido(nombre, id, producto, precioProducto, cantidadPedido, PrecioTotalPedido);
+                    pedidos.add(nuevoPedido);
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         return false;
     }
 

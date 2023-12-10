@@ -1,0 +1,14 @@
+ID: 56546
+Nombre: Oscar
+Telefono: 546456
+Dirección: Mariano
+ProductoAVender: Lapices
+ValorDelProductoAVender: 2000
+
+ID: 453
+Nombre: Pabloxxx
+Telefono: 453
+Dirección: FSDF
+ProductoAVender: SDFFD
+ValorDelProductoAVender: 1233
+

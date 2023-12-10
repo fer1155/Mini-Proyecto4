@@ -30,6 +30,7 @@ public class AdminPrincipalController {
     private int filaSeleccionadaActualizarProveedor;
     private int filaSeleccionadaEliminarProveedor;
     private int filaSeleccionadaActualizarPedido;
+    private boolean cargoInfo = false;
 
     public AdminPrincipalController(AdminPrincipalView vista, AdminPrincipalModel modelo) {
         this.vista = vista;
@@ -48,7 +49,6 @@ public class AdminPrincipalController {
         this.vista.addBtonComprasActionListener(new acciones());
         this.vista.addBtonProvedoresActionListener(new acciones());
         this.vista.addBtonPedidosActionListener(new acciones());
-        this.vista.addBtonCargarInfoSesionActionListener(new acciones());
         this.vista.addBtonCerrarSesionActionListener(new acciones());
         this.vista.addBtonEliminarUsuarioActionListener(new acciones4());
         this.vista.addBtonEliminarActionListener(new acciones4());
@@ -153,9 +153,15 @@ public class AdminPrincipalController {
                 vista.mostrarPestanaPedidosPrincipal();
             }
             
+            /*
             if(e.getActionCommand().equalsIgnoreCase("Cargar info (.txt)")){
-                modelo.cargarUsuariostxt();
-            }
+                if(cargoInfo == false){
+                    
+                    cargoInfo = true;
+                }else{
+                    JOptionPane.showMessageDialog(null, "La informacion se cargo previamente", "Info", JOptionPane.INFORMATION_MESSAGE);
+                }   
+            }*/
             
             if(e.getActionCommand().equalsIgnoreCase("Cerrar sesion")){
                 vistaLogin = new LoginView();
@@ -298,6 +304,7 @@ public class AdminPrincipalController {
                     vista.getPg4Pnt3().setjLabel4(valueOf(id));
                     vista.getPg4Pnt3().setjLabel6(productoAVender);
                     vista.getPg4Pnt3().setjLabel8(valueOf(valorProductoAVender));
+                    vista.getPg4Pnt3().getjSpinner1().setValue(0);
 
                     vista.mostrarPestanaProvedoresPgn3();
                 }else{
@@ -450,6 +457,7 @@ public class AdminPrincipalController {
                     vista.getPg5Pnt2().setjLabel6(producto);
                     vista.getPg5Pnt2().setjLabel8(valueOf(valorProducto));
                     vista.getPg5Pnt2().setjLabel11(valueOf(unidades));
+                    vista.getPg5Pnt2().getjSpinner1().setValue(0);
                     
                     vista.mostrarPestanaPedidosPgn2();
                 }else{
@@ -626,4 +634,17 @@ public class AdminPrincipalController {
         }
         return false;
     }
+    
+    /*
+    public void cargarInfo(){
+        modelo.cargarUsuariostxt();
+        modelo.cargarProductotxt();
+        modelo.cargarComprastxt();
+        modelo.cargarProvedorestxt();
+        modelo.cargarPedidostxt();
+        actualizarTablaProductos();
+        actualizarTablaProvedores();
+        actualizarTablaPedidos();
+        JOptionPane.showMessageDialog(null, "¡La informacion se cargo correctamente!", "Info", JOptionPane.INFORMATION_MESSAGE);
+    }*/
 }
