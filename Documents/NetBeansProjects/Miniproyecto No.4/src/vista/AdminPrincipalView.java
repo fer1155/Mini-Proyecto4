@@ -10,6 +10,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
+import javax.swing.JTable;
 import javax.swing.border.Border;
 import javax.swing.table.DefaultTableModel;
 
@@ -37,11 +38,12 @@ public class AdminPrincipalView extends javax.swing.JFrame {
         //this.setLocationRelativeTo(null);
         
         //add buttons to the array
-        buttons = new JButton[4];
+        buttons = new JButton[5];
         buttons[0] = jButton1;
         buttons[1] = jButton2;
         buttons[2] = jButton4;
         buttons[3] = jButton5;
+        buttons[4] = jButton6;
         
         //add border to the jbuttons
         for(JButton button : buttons){
@@ -65,8 +67,10 @@ public class AdminPrincipalView extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
         content = new javax.swing.JPanel();
         jButton3 = new javax.swing.JButton();
+        jButtonCargarInfo = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -89,7 +93,7 @@ public class AdminPrincipalView extends javax.swing.JFrame {
 
         jButton2.setFont(new java.awt.Font("Verdana", 0, 13)); // NOI18N
         jButton2.setForeground(new java.awt.Color(153, 153, 153));
-        jButton2.setText("#4");
+        jButton2.setText("Proveedores");
         jButton2.setBorder(null);
         jButton2.setContentAreaFilled(false);
         jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -126,6 +130,19 @@ public class AdminPrincipalView extends javax.swing.JFrame {
             }
         });
 
+        jButton6.setFont(new java.awt.Font("Verdana", 0, 13)); // NOI18N
+        jButton6.setForeground(new java.awt.Color(153, 153, 153));
+        jButton6.setText("Pedidos");
+        jButton6.setBorder(null);
+        jButton6.setContentAreaFilled(false);
+        jButton6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton6.setFocusPainted(false);
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -137,9 +154,11 @@ public class AdminPrincipalView extends javax.swing.JFrame {
                 .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(36, 36, 36)
                 .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(172, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -149,7 +168,8 @@ public class AdminPrincipalView extends javax.swing.JFrame {
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(20, Short.MAX_VALUE))
         );
 
@@ -159,7 +179,7 @@ public class AdminPrincipalView extends javax.swing.JFrame {
         content.setLayout(contentLayout);
         contentLayout.setHorizontalGroup(
             contentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 720, Short.MAX_VALUE)
         );
         contentLayout.setVerticalGroup(
             contentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -173,6 +193,13 @@ public class AdminPrincipalView extends javax.swing.JFrame {
             }
         });
 
+        jButtonCargarInfo.setText("Cargar info (.txt)");
+        jButtonCargarInfo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCargarInfoActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -181,6 +208,8 @@ public class AdminPrincipalView extends javax.swing.JFrame {
             .addComponent(content, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButtonCargarInfo)
+                .addGap(26, 26, 26)
                 .addComponent(jButton3)
                 .addGap(44, 44, 44))
         );
@@ -188,7 +217,9 @@ public class AdminPrincipalView extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(19, Short.MAX_VALUE)
-                .addComponent(jButton3)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton3)
+                    .addComponent(jButtonCargarInfo))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -240,6 +271,14 @@ public class AdminPrincipalView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
 
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButtonCargarInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCargarInfoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonCargarInfoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -282,13 +321,23 @@ public class AdminPrincipalView extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButtonCargarInfo;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
-    private Page1 pg1;
+    private Page1 pg1 = new Page1();
+    private Page1Pnt2 pg1Pnt2 = new Page1Pnt2();
     private Page2 pg2 = new Page2();
     private Page2Pnt1 pg2Pnt1 = new Page2Pnt1();
+    private Page2Pnt2 pg2Pnt2 = new Page2Pnt2();
     private PageComprasPrincipal pg3 = new PageComprasPrincipal();
+    private PageProvedoresPrincipal pg4 = new PageProvedoresPrincipal();
+    private PageProvedoresPgn2 pg4Pnt2 = new PageProvedoresPgn2();
+    private PageProvedoresPgn3 pg4Pnt3 = new PageProvedoresPgn3();
+    private PageProvedoresPgn4 pg4Pnt4 = new PageProvedoresPgn4();
+    private PagePedidosPrincipal pg5 = new PagePedidosPrincipal();
+    private PagePedidosPgn2 pg5Pgn2 = new PagePedidosPgn2();
 
     public void addBtonClienteListener(MouseListener listenControl){
         jButton1.addMouseListener(listenControl);
@@ -302,8 +351,12 @@ public class AdminPrincipalView extends javax.swing.JFrame {
         jButton5.addMouseListener(listenControl);
     }
     
-    public void addBtonbton4Listener(MouseListener listenControl){
+    public void addBtonProvedoresListener(MouseListener listenControl){
         jButton2.addMouseListener(listenControl);
+    }
+    
+    public void addBtonPedidosListener(MouseListener listenControl){
+        jButton6.addMouseListener(listenControl);
     }
     
     public void addBtonClienteActionListener(ActionListener listenControl){
@@ -318,8 +371,20 @@ public class AdminPrincipalView extends javax.swing.JFrame {
         jButton5.addActionListener(listenControl);
     }
     
+    public void addBtonProvedoresActionListener(ActionListener listenControl){
+        jButton2.addActionListener(listenControl);
+    }
+    
+     public void addBtonPedidosActionListener(ActionListener listenControl){
+        jButton6.addActionListener(listenControl);
+    }
+    
     public void addBtonCerrarSesionActionListener(ActionListener listenControl){
         jButton3.addActionListener(listenControl);
+    }
+    
+    public void addBtonCargarInfoSesionActionListener(ActionListener listenControl){
+        jButtonCargarInfo.addActionListener(listenControl);
     }
     
     public JButton getjButton1() {
@@ -337,9 +402,12 @@ public class AdminPrincipalView extends javax.swing.JFrame {
     public JButton getjButton5() {
         return jButton2;
     }
+
+    public JButton getjButton6() {
+        return jButton6;
+    }
     
     public void mostrarPestanaClientes(){
-        pg1 = new Page1();
         pg1.setSize(720, 368);
         pg1.setLocation(0, 0);
         
@@ -347,6 +415,32 @@ public class AdminPrincipalView extends javax.swing.JFrame {
         content.add(pg1);
         content.revalidate();
         content.repaint();
+    }
+    
+    public void addBtonEliminarUsuarioActionListener(ActionListener listenControl){
+        pg1.getjButtonEliminarCliente().addActionListener(listenControl);
+    }
+    
+    public void mostrarPestanaEliminarClientes(){
+        pg1Pnt2.setSize(720, 368);
+        pg1Pnt2.setLocation(0, 0);
+        
+        content.removeAll();
+        content.add(pg1Pnt2);
+        content.revalidate();
+        content.repaint();
+    }
+    
+    public void addBtonEliminarActionListener(ActionListener listenControl){
+        pg1Pnt2.getjButtonEliminar().addActionListener(listenControl);
+    }
+    
+    public void addBtonCancelarEliminarActionListener(ActionListener listenControl){
+        pg1Pnt2.getjButtonCancelarEliminar().addActionListener(listenControl);
+    }
+    
+    public Page1Pnt2 getPage1Pnt2(){
+        return pg1Pnt2;
     }
     
     public void mostrarPestana2(){
@@ -359,12 +453,24 @@ public class AdminPrincipalView extends javax.swing.JFrame {
         content.repaint();
     }
     
+    public Page2 getPage2(){
+        return pg2;
+    }
+    
     public void setTextClientes(String texto){
         pg1.setjTextArea1(texto);
     }
         
     public void addBtonAgregarProductoActionListener(ActionListener listenControl){
         pg2.getjAgregarProductoButton1().addActionListener(listenControl);
+    }
+    
+    public void addBtonActualizarProductoActionListener(ActionListener listenControl){
+        pg2.getjButtonActualizarProducto().addActionListener(listenControl);
+    }
+    
+    public void addBtonEliminarProductoActionListener(ActionListener listenControl){
+        pg2.getjButtonEliminarProducto().addActionListener(listenControl);
     }
     
     public DefaultTableModel getModeloTablaPg2(){
@@ -393,6 +499,28 @@ public class AdminPrincipalView extends javax.swing.JFrame {
         return pg2Pnt1;
     }
     
+    public void mostrarPestanaActualizarProductos(){
+        pg2Pnt2.setSize(720, 368);
+        pg2Pnt2.setLocation(0, 0);
+        
+        content.removeAll();
+        content.add(pg2Pnt2);
+        content.revalidate();
+        content.repaint();
+    }
+    
+    public Page2Pnt2 getPg2Pnt2(){
+        return pg2Pnt2;
+    }
+    
+    public void addBtonActualizarActionListener(ActionListener listenControl){
+        pg2Pnt2.getjButton1().addActionListener(listenControl);
+    }
+    
+    public void addBtonCerrarActualizarActionListener(ActionListener listenControl){
+        pg2Pnt2.getjButton2().addActionListener(listenControl);
+    }
+    
     public void mostrarPestanaComprasPrincipal(){
         pg3.setSize(720, 368);
         pg3.setLocation(0, 0);
@@ -402,4 +530,157 @@ public class AdminPrincipalView extends javax.swing.JFrame {
         content.revalidate();
         content.repaint();
     }
+    
+    public void setTextCompras(String texto){
+        pg3.setjTextAreaCompras(texto);
+    }
+    
+    public void mostrarPestanaProvedoresPrincipal(){
+        pg4.setSize(720, 368);
+        pg4.setLocation(0, 0);
+        
+        content.removeAll();
+        content.add(pg4);
+        content.revalidate();
+        content.repaint();
+    }
+    
+    public DefaultTableModel getModeloTablaPg4(){
+        return pg4.getModelo();
+    }
+    
+    public JTable getjTableProvedores() {
+        return pg4.getjTableProvedores();
+    }
+    
+    public void addBtonAgregarProvedorActionListener(ActionListener listenControl){
+        pg4.getjButtonAgregarProvedor().addActionListener(listenControl);
+    }
+    
+    public void addBtonCrearPedidoActionListener(ActionListener listenControl){
+        pg4.getjButtonCrearPedido().addActionListener(listenControl);
+    }
+    
+    public void addBtonActualizarProvedorActionListener(ActionListener listenControl){
+        pg4.getjButtonActualizarProveedor().addActionListener(listenControl);
+    }
+    
+    public void addBtonEliminarProvedorActionListener(ActionListener listenControl){
+        pg4.getjButtonEliminarProveedor().addActionListener(listenControl);
+    }
+    
+    public void mostrarPestanaProvedoresPgn2(){
+        pg4Pnt2.setSize(720, 368);
+        pg4Pnt2.setLocation(0, 0);
+        
+        content.removeAll();
+        content.add(pg4Pnt2);
+        content.revalidate();
+        content.repaint();
+    }
+    
+    public void addBtonaddProvedorActionListener(ActionListener listenControl){
+        pg4Pnt2.getjButtonAgregar().addActionListener(listenControl);
+    }
+    
+    public void addBtonCerrarPage4Pnt2ActionListener(ActionListener listenControl){
+        pg4Pnt2.getjButtonCancelar().addActionListener(listenControl);
+    }
+    
+    public PageProvedoresPgn2 getPg4Pnt2(){
+        return pg4Pnt2;
+    }
+    
+    public void mostrarPestanaProvedoresPgn3(){
+        pg4Pnt3.setSize(720, 368);
+        pg4Pnt3.setLocation(0, 0);
+        
+        content.removeAll();
+        content.add(pg4Pnt3);
+        content.revalidate();
+        content.repaint();
+    }
+    
+    public PageProvedoresPgn3 getPg4Pnt3(){
+        return pg4Pnt3;
+    }
+    
+    public void addBtonSolicitarPedidoActionListener(ActionListener listenControl){
+        pg4Pnt3.getjButtonSolicitarPedido().addActionListener(listenControl);
+    }
+    
+    public void addBtonCancelarSolicitarPedidoActionListener(ActionListener listenControl){
+        pg4Pnt3.getjButtonCancelarSolicitarPedido().addActionListener(listenControl);
+    }
+    
+    public void mostrarPestanaProvedoresPgn4(){
+        pg4Pnt4.setSize(720, 368);
+        pg4Pnt4.setLocation(0, 0);
+        
+        content.removeAll();
+        content.add(pg4Pnt4);
+        content.revalidate();
+        content.repaint();
+    }
+    
+    public PageProvedoresPgn4 getPg4Pnt4(){
+        return pg4Pnt4;
+    }
+    
+    public void addBtonActualizarProveedorActionListener(ActionListener listenControl){
+        pg4Pnt4.getjButtonActualizar().addActionListener(listenControl);
+    }
+    
+    public void addBtonCancelarActualizarProveedorActionListener(ActionListener listenControl){
+        pg4Pnt4.getjButtonCancelar().addActionListener(listenControl);
+    }
+    
+    public void mostrarPestanaPedidosPrincipal(){
+        pg5.setSize(720, 368);
+        pg5.setLocation(0, 0);
+        
+        content.removeAll();
+        content.add(pg5);
+        content.revalidate();
+        content.repaint();
+    }
+    
+    public PagePedidosPrincipal getPg5(){
+        return pg5;
+    }
+    
+    public DefaultTableModel getModeloTablaPg5(){
+        return pg5.getModelo();
+    }
+    
+    public void addBtonActualizarPedidoActionListener(ActionListener listenControl){
+        pg5.getjButtonActualizarPedido().addActionListener(listenControl);
+    }
+    
+    public void addBtonEliminarPediActionListener(ActionListener listenControl){
+        pg5.getjButtonEliminar().addActionListener(listenControl);
+    }
+    
+    public void mostrarPestanaPedidosPgn2(){
+        pg5Pgn2.setSize(720, 368);
+        pg5Pgn2.setLocation(0, 0);
+        
+        content.removeAll();
+        content.add(pg5Pgn2);
+        content.revalidate();
+        content.repaint();
+    }
+    
+    public PagePedidosPgn2 getPg5Pnt2(){
+        return pg5Pgn2;
+    }
+    
+    public void addBtonActualizarPediActionListener(ActionListener listenControl){
+        pg5Pgn2.getjButton1().addActionListener(listenControl);
+    }
+    
+    public void addBtonCancelarActualizarPediActionListener(ActionListener listenControl){
+        pg5Pgn2.getjButton2().addActionListener(listenControl);
+    }
+   
 }

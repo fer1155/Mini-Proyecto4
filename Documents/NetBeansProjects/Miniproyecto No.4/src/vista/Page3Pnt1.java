@@ -42,7 +42,8 @@ public class Page3Pnt1 extends javax.swing.JPanel {
         jLabel9 = new javax.swing.JLabel();
         jButtonComprar = new javax.swing.JButton();
         jButtonCancelar = new javax.swing.JButton();
-        jSpinner1 = new javax.swing.JSpinner();
+        SpinnerNumberModel model = new SpinnerNumberModel(0, 0, Integer.MAX_VALUE, 1);
+        jSpinner1 = new javax.swing.JSpinner(model);
 
         jLabel1.setText("Producto:");
 
@@ -182,5 +183,11 @@ public class Page3Pnt1 extends javax.swing.JPanel {
     public int getjSpinnerValue() {
         return (int) jSpinner1.getValue();
     }
+
+    public void setjSpinner1(int numero) {
+        this.jSpinner1.setValue(numero);
+    }
+    
+  
     
 }

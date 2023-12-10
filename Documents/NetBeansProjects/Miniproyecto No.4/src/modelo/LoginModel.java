@@ -19,6 +19,10 @@ public class LoginModel {
         return this.Dao.getUsario(nombre, usuarioContraseña);
     }
     
+    public boolean eliminarUsuario(int id){
+        return this.Dao.deleteUsario(id);
+    }
+    
     public ArrayList<Usuario> obtenerClientes(){
         return this.Dao.getArrayClientes();
     }
@@ -53,5 +57,65 @@ public class LoginModel {
     
     public void setiarUsuarioActual(Usuario usuario){
         this.Dao.setUsuarioActual(usuario);
+    }
+    
+    public boolean agregarProvedor(Provedor provedorAIngresar){
+        return this.Dao.addProvedor(provedorAIngresar);
+    }
+    
+    public ArrayList<Provedor> obtenerArrayProvedores(){
+        return this.Dao.getArrayProvedores();
+    }
+    
+    public boolean agregarPedido(Pedido pedidoAIngresar){
+        return this.Dao.addPedido(pedidoAIngresar);
+    }
+    
+    public ArrayList<Pedido> obtenerArrayPedidos(){
+        return this.Dao.getArrayPedidos();
+    }
+    
+    public Usuario obtenerUsarioXContasena(String usuarioContraseña){
+        return this.Dao.getUsuarioXContrasena(usuarioContraseña);
+    }
+    
+    public boolean eliminarProducto(String numReferenciaProducto){
+        return this.Dao.deleteProducto(numReferenciaProducto);
+    }
+    
+    public void actualizarUsuarios(){
+        this.Dao.updateUsuarios();
+    }
+    
+    public void actualizarProductos(){
+        this.Dao.updateProductos();
+    }
+    
+    public Provedor obtenerProvedor(int id){
+        return this.Dao.getProvedor(id);
+    }
+    
+    public boolean eliminarProvedor(int id){
+        return this.Dao.deleteProveedor(id);
+    }
+    
+    public void actualizarProvedores(){
+        this.Dao.updateProveedor();
+    }
+    
+    public Pedido obtenerPedido(int id, String producto){
+        return this.Dao.getPedido(id, producto);
+    }
+    
+    public boolean eliminarPedido(int id, String producto){
+        return this.Dao.deletePedido(id, producto);
+    }
+    
+    public void actualizarPedido(){
+        this.Dao.updatePedido();
+    }
+    
+    public boolean cargarUsuariostxt(){
+        return this.Dao.cargarUsuariostxt();
     }
 }

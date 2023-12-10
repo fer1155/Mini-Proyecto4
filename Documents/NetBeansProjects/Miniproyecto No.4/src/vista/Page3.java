@@ -35,6 +35,9 @@ public class Page3 extends javax.swing.JPanel {
         jTable1 = new javax.swing.JTable();
         jButtonComprarProducto = new javax.swing.JButton();
         jButtonCerrarSesion = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jButtonActInfo = new javax.swing.JButton();
+        jButtonRegistroPersonal = new javax.swing.JButton();
 
         modelo = new DefaultTableModel();
         modelo.addColumn("NumReferencia");
@@ -53,32 +56,45 @@ public class Page3 extends javax.swing.JPanel {
 
         jButtonCerrarSesion.setText("Cerrar sesion");
 
+        jLabel1.setText("Productos a la venta");
+
+        jButtonActInfo.setText("Editar Perfil");
+
+        jButtonRegistroPersonal.setText("Registro personal de compras");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(69, 69, 69)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 444, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(44, 44, 44)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(69, 69, 69)
                         .addComponent(jButtonComprarProducto)
-                        .addGap(39, 39, 39)
-                        .addComponent(jButtonCerrarSesion)))
-                .addContainerGap(277, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addComponent(jButtonCerrarSesion)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButtonActInfo)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButtonRegistroPersonal)))
+                .addContainerGap(74, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(54, 54, 54)
+                .addContainerGap(48, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 73, Short.MAX_VALUE)
+                .addGap(31, 31, 31)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonComprarProducto)
-                    .addComponent(jButtonCerrarSesion))
-                .addGap(45, 45, 45))
+                    .addComponent(jButtonCerrarSesion)
+                    .addComponent(jButtonActInfo)
+                    .addComponent(jButtonRegistroPersonal))
+                .addGap(59, 59, 59))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -88,8 +104,11 @@ public class Page3 extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButtonActInfo;
     private javax.swing.JButton jButtonCerrarSesion;
     private javax.swing.JButton jButtonComprarProducto;
+    private javax.swing.JButton jButtonRegistroPersonal;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
@@ -110,4 +129,13 @@ public class Page3 extends javax.swing.JPanel {
     public JTable getjTable1() {
         return jTable1;
     }
+
+    public JButton getjButtonActInfo() {
+        return jButtonActInfo;
+    }
+
+    public JButton getjButtonRegistroPersonal() {
+        return jButtonRegistroPersonal;
+    }
+   
 }

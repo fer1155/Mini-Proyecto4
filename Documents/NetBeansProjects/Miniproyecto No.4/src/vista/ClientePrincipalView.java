@@ -99,6 +99,8 @@ public class ClientePrincipalView extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
     private Page3 pg3 = new Page3();
     private Page3Pnt1 pg3Pnt1 = new Page3Pnt1();
+    private Page3Pnt2 pg3Pnt2 = new Page3Pnt2();
+    private Page3Pnt3 pg3Pnt3 = new Page3Pnt3();
 
     public DefaultTableModel getModelo() {
         return pg3.getModelo();
@@ -126,6 +128,14 @@ public class ClientePrincipalView extends javax.swing.JFrame {
         pg3.getjButtonCerrarSesion().addActionListener(listenControl);
     }
     
+    public void addBtonActualizarInfoActionListener(ActionListener listenControl){
+        pg3.getjButtonActInfo().addActionListener(listenControl);
+    }
+    
+    public void addBtonVerRegistroActionListener(ActionListener listenControl){
+        pg3.getjButtonRegistroPersonal().addActionListener(listenControl);
+    }
+    
     public void mostrarPestanaComprarProductos(){
         pg3Pnt1.setSize(720, 368);
         pg3Pnt1.setLocation(0, 0);
@@ -146,5 +156,45 @@ public class ClientePrincipalView extends javax.swing.JFrame {
     
     public void addBtonCancelarActionListener(ActionListener listenControl){
         pg3Pnt1.getjButtonCancelar().addActionListener(listenControl);
+    }
+    
+    public void mostrarPestanaActualizarInfo(){
+        pg3Pnt2.setSize(720, 368);
+        pg3Pnt2.setLocation(0, 0);
+        
+        content.removeAll();
+        content.add(pg3Pnt2);
+        content.revalidate();
+        content.repaint();
+    }
+    
+    public Page3Pnt2 getPg3Pnt2() {
+        return pg3Pnt2;
+    }
+    
+    public void addBtonActualizarActionListener(ActionListener listenControl){
+        pg3Pnt2.getjButtonActualizar().addActionListener(listenControl);
+    }
+    
+    public void addBtonCancelarActualizarActionListener(ActionListener listenControl){
+        pg3Pnt2.getjButtonCancelar().addActionListener(listenControl);
+    }
+    
+    public void mostrarPestanaRegistroCompras(){
+        pg3Pnt3.setSize(720, 368);
+        pg3Pnt3.setLocation(0, 0);
+        
+        content.removeAll();
+        content.add(pg3Pnt3);
+        content.revalidate();
+        content.repaint();
+    }
+    
+    public Page3Pnt3 getPg3Pnt3() {
+        return pg3Pnt3;
+    }
+    
+    public void addBtonCancelarVerMisComprasActionListener(ActionListener listenControl){
+        pg3Pnt3.getjButtonSalir().addActionListener(listenControl);
     }
 }

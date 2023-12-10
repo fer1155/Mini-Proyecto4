@@ -8,6 +8,7 @@ import javax.swing.JOptionPane;
 import modelo.ClientePrincipalModel;
 import modelo.Compra;
 import modelo.Producto;
+import modelo.Usuario;
 import vista.ClientePrincipalView;
 import vista.LoginView;
 
@@ -17,6 +18,7 @@ public class ClientePrincipalController {
     private int filaSeleccionada; 
     private LoginView vistaLogin;
     private LoginController controladorLogin;
+    private Usuario usuarioActual;
 
     public ClientePrincipalController(ClientePrincipalView vista, ClientePrincipalModel modelo) {
         this.vista = vista;
@@ -26,8 +28,13 @@ public class ClientePrincipalController {
         actualizarTablaProductos();
         vista.addBtonComprarProductoActionListener(new acciones());
         vista.addBtonCerrarSesionActionListener(new acciones());
+        vista.addBtonActualizarInfoActionListener(new acciones());
+        vista.addBtonVerRegistroActionListener(new acciones());
         vista.addBtonComprarActionListener(new acciones2());
         vista.addBtonCancelarActionListener(new acciones2());
+        vista.addBtonActualizarActionListener(new acciones3());
+        vista.addBtonCancelarActualizarActionListener(new acciones3());
+        vista.addBtonCancelarVerMisComprasActionListener(new acciones4());
     }
     
     public void actualizarTablaProductos(){
@@ -39,7 +46,9 @@ public class ClientePrincipalController {
         }
         
         ArrayList<Producto> productos = modelo.obtenerProductos();
-                
+
+        quitarProductosUnidades0();
+        
         for(Producto productoAIngresar : productos){
             agregarFilaATabla(productoAIngresar);
         }
@@ -56,6 +65,19 @@ public class ClientePrincipalController {
         
         vista.getModelo().addRow(fila);
     }
+
+    private boolean quitarProductosUnidades0() {
+        ArrayList<Producto> productos = modelo.obtenerProductos();
+        
+        for(Producto productoARevisar : productos){
+            if(productoARevisar.getUnidadesDisponibles() == 0){
+                modelo.deleteProducto(productoARevisar.getNumReferencia());
+                return true;
+            }
+        }
+
+        return false;
+    }
     
     class acciones implements ActionListener{ 
         @Override
@@ -71,17 +93,43 @@ public class ClientePrincipalController {
                     vista.getPg3Pnt1().setjLabel4(numReferencia);
                     vista.getPg3Pnt1().setjLabel6(valueOf(precio));
                     vista.getPg3Pnt1().setjLabel8(valueOf(unidadesDisponibles));
+                    vista.getPg3Pnt1().setjSpinner1(0);
                     vista.mostrarPestanaComprarProductos();
                 }else{
                     JOptionPane.showMessageDialog(null, "No hay fila seleccionada", "Advertencia", JOptionPane.WARNING_MESSAGE);
                 }
             }
+            
             if(e.getActionCommand().equalsIgnoreCase("Cerrar sesion")){
                 vistaLogin = new LoginView();
                 controladorLogin = new LoginController(vistaLogin, modelo.getLoginModel());
                 vista.dispose();
             }
             
+            if(e.getActionCommand().equalsIgnoreCase("Editar Perfil")){
+                usuarioActual = modelo.getUsuarioActual();
+                vista.getPg3Pnt2().setjTextField1(usuarioActual.getNombre());
+                vista.getPg3Pnt2().setjTextField2(usuarioActual.getCorreo());
+                vista.getPg3Pnt2().setjTextField3(usuarioActual.getDireccion());
+                vista.getPg3Pnt2().setjTextField4(usuarioActual.getPassword());
+                vista.mostrarPestanaActualizarInfo();
+            }
+            
+            if(e.getActionCommand().equalsIgnoreCase("Registro personal de compras")){
+                usuarioActual = modelo.getUsuarioActual();
+                ArrayList<Compra> compras = modelo.getArrayCompras();
+                String texto = "";
+                int num = 1;
+                for(Compra compra: compras){
+                    if(usuarioActual.getNumId() == compra.getNumId()){
+                        texto += num + ") "+ "Producto: " + compra.getProducto()+ " Unidades compradas: " + compra.getUnidadesCompradas() + " Precio total: " + compra.getPrecioTotalComprado() + "\n";
+                        num += 1;
+                    }
+                }
+                
+                vista.getPg3Pnt3().getjTextAreaRegistroCompras().setText(texto);
+                vista.mostrarPestanaRegistroCompras();
+            }
         }
     }
     
@@ -110,6 +158,36 @@ public class ClientePrincipalController {
                 vista.mostrarPestanaClientes();
                 actualizarTablaProductos();
             } 
+        }
+    }
+    
+    class acciones3 implements ActionListener{ 
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            if(e.getActionCommand().equalsIgnoreCase("Actualizar")){
+                Usuario usarioAActualizar = modelo.getUsuario(usuarioActual.getNombre(), usuarioActual.getPassword());
+                usarioAActualizar.setNombre(vista.getPg3Pnt2().getjTextField1().getText());
+                usarioAActualizar.setCorreo(vista.getPg3Pnt2().getjTextField2().getText());
+                usarioAActualizar.setDireccion(vista.getPg3Pnt2().getjTextField3().getText());
+                usarioAActualizar.setPassword(vista.getPg3Pnt2().getjTextField4().getText());
+                modelo.updateUsuarios();
+                JOptionPane.showMessageDialog(null, "Perfil actualizado con exito", "Info", JOptionPane.INFORMATION_MESSAGE);
+                vista.mostrarPestanaClientes();
+            }
+            
+            if(e.getActionCommand().equalsIgnoreCase("Cancelar")){
+                vista.mostrarPestanaClientes();
+                actualizarTablaProductos();
+            }
+        }
+    }
+    
+    class acciones4 implements ActionListener{ 
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            if(e.getActionCommand().equalsIgnoreCase("Salir")){
+                vista.mostrarPestanaClientes();
+            }
         }
     }
     

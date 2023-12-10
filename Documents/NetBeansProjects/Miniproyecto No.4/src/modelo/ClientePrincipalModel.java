@@ -20,11 +20,27 @@ public class ClientePrincipalModel {
         return modeloGeneral.agregarCompra(registroCompra);
     }
     
+    public ArrayList<Compra> getArrayCompras(){
+        return modeloGeneral.obtenerArrayCompras();
+    }
+    
     public Usuario getUsuarioActual(){
         return modeloGeneral.obtenerUsuarioActual();
     }
     
     public LoginModel getLoginModel(){
         return modeloGeneral;
+    }
+
+    public boolean deleteProducto(String numReferencia){
+        return modeloGeneral.eliminarProducto(numReferencia);
+    }
+    
+    public Usuario getUsuario(String nombre, String usuarioContraseña){
+        return modeloGeneral.obtenerUsario(nombre, usuarioContraseña);
+    }
+    
+    public void updateUsuarios(){
+        modeloGeneral.actualizarUsuarios();
     }
 }

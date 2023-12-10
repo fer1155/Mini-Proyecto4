@@ -48,7 +48,7 @@ public class Producto {
     
     @Override
     public String toString() {
-        return "Num referencia: " + numReferencia + " Nombre: " + nombre + " Unidades disponibles: " + unidadesDisponibles + " Precio: " + precio;
+        return "Num referencia: " + numReferencia + " / Nombre: " + nombre + " / Unidades disponibles: " + unidadesDisponibles + " / Precio: " + precio;
     }
        
 }

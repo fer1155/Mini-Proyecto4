@@ -1,0 +1,1 @@
+nombreProvedor: sfsd / idProvedor: 123 / producto: sdfsd1 / precioProducto: 1 / cantidadPedido: 2 / precioTotalPedido: 2

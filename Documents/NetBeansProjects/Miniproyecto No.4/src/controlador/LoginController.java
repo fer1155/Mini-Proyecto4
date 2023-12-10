@@ -2,6 +2,7 @@ package controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
 import modelo.AdminPrincipalModel;
 import modelo.ClientePrincipalModel;
 import modelo.CrearUsuarioModel;
@@ -31,6 +32,7 @@ public class LoginController {
         vista.setVisible(true);
         this.vista.addBtonCrearCuentaListener(new abrirVentana());
         this.vista.addBtonIngresarListener(new abrirVentana());
+        this.vista.addBtonMostrarPasswordListener(new abrirVentana());
     }
     
     class abrirVentana implements ActionListener{ 
@@ -43,23 +45,33 @@ public class LoginController {
                 vista.dispose();
             }
             if(e.getActionCommand().equalsIgnoreCase("INGRESAR")){
+                Usuario adminObtenido = modelo.obtenerAdmin(vista.getNombreTextField().getText(), vista.getContrasenaPasswordFiel().getText());
+                Usuario usuarioObtenido = modelo.obtenerUsario(vista.getNombreTextField().getText(), vista.getContrasenaPasswordFiel().getText());
                 
-                Usuario adminObtenido = modelo.obtenerAdmin(vista.getNombreTextField().getText(), vista.getContrasenaTextField().getText());
                 if(adminObtenido != null){
                     vistaPrincipalAdmin = new AdminPrincipalView();
                     modeloPrincipalAdmin = new AdminPrincipalModel(modelo);
                     controladorPrincipalAdmin = new AdminPrincipalController(vistaPrincipalAdmin, modeloPrincipalAdmin);
                     vista.dispose();
-                }
-                
-                Usuario usuarioObtenido = modelo.obtenerUsario(vista.getNombreTextField().getText(), vista.getContrasenaTextField().getText());
-                if(usuarioObtenido != null){
+                }else if(usuarioObtenido != null){
                     modelo.setiarUsuarioActual(usuarioObtenido);
-                    System.out.println("Usuario encontrado");
                     vistaPrincipalCliente = new ClientePrincipalView();
                     modeloPrincipalCliente = new ClientePrincipalModel(modelo);
                     controladorPrincipalCliente = new ClientePrincipalController(vistaPrincipalCliente, modeloPrincipalCliente);
                     vista.dispose();
+                }else{
+                    JOptionPane.showMessageDialog(null, "Usuario no encontrado", "Advertencia", JOptionPane.WARNING_MESSAGE);
+                }
+            }
+            
+            if(e.getActionCommand().equalsIgnoreCase("Show/Hide")){
+                char echoChar = vista.getContrasenaPasswordFiel().getEchoChar();
+                if (echoChar == '•') {
+                    // Si el carácter de eco es '*', cambia a '\0' (sin eco)
+                    vista.getContrasenaPasswordFiel().setEchoChar('\0');
+                } else {
+                    // Si el carácter de eco no es '*', cambia a '*'
+                    vista.getContrasenaPasswordFiel().setEchoChar('•');
                 }
             }
         }

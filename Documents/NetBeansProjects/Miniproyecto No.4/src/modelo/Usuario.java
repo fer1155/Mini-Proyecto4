@@ -59,6 +59,6 @@ public class Usuario {
     
     @Override
     public String toString() {
-        return "Nombre Completo: " + nombre + " Número de identificación: " + numId + " Correo: " + correo + " Direccion: " + direccion + " Password: " + password;
+        return "Nombre de usuario: " + nombre + " / Número de identificación: " + numId + " / Correo: " + correo + " / Direccion: " + direccion + " / Password: " + password;
     }
 }

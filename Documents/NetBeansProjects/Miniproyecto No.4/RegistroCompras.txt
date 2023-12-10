@@ -1,0 +1,1 @@
+Compra{ nombreDelComprador=Fer, numId=123, producto=sdfsf, unidadesCompradas=4, precioTotalComprado=40}
