@@ -1,13 +1,46 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package modelo;
 
-/**
- *
- * @author Fernando
- */
+import java.util.ArrayList;
+
 public class ClientePrincipalModel {
+    private LoginModel modeloGeneral;
     
+    public ClientePrincipalModel(LoginModel modelo) {
+        this.modeloGeneral = modelo;
+    }
+    public ArrayList<Producto> obtenerProductos(){
+        return modeloGeneral.obtenerProductos();
+    }
+    
+    public Producto getProducto(String numSerie){
+        return modeloGeneral.obtenerProducto(numSerie);
+    }
+    
+    public boolean addCompra(Compra registroCompra){
+        return modeloGeneral.agregarCompra(registroCompra);
+    }
+    
+    public ArrayList<Compra> getArrayCompras(){
+        return modeloGeneral.obtenerArrayCompras();
+    }
+    
+    public Usuario getUsuarioActual(){
+        return modeloGeneral.obtenerUsuarioActual();
+    }
+    
+    public LoginModel getLoginModel(){
+        return modeloGeneral;
+    }
+
+    public boolean deleteProducto(String numReferencia){
+        return modeloGeneral.eliminarProducto(numReferencia);
+    }
+    
+    public Usuario getUsuario(String nombre, String usuarioContraseña){
+        return modeloGeneral.obtenerUsario(nombre, usuarioContraseña);
+    }
+    
+    public void updateUsuarios(){
+        modeloGeneral.actualizarUsuarios();
+    }
 }

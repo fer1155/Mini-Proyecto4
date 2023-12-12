@@ -10,7 +10,8 @@ public class Main {
         LoginView vistaLogin = new LoginView();
         LoginModel modeloLogin = new LoginModel();
         LoginController controladorLogin = new LoginController(vistaLogin, modeloLogin);
-        System.out.println("Santiago");
+        controladorLogin.cargarInfo();
+
     }
     
 }
