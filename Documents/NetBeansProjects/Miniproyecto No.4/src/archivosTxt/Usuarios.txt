@@ -1,0 +1,6 @@
+Nombre: Pepe
+NúmeroDeIdentificación: 12321
+Correo: sdfsd
+Dirección: sdffd
+Password: sdfsdfsdf
+

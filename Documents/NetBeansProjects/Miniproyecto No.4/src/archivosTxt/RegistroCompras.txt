@@ -1,0 +1,18 @@
+NombreDelComprador: Pablito
+NumeroID: 132341
+Producto: Marhuana
+UnidadesCompradas: 2
+PrecioTotalComprado: 10000
+
+NombreDelComprador: Daniel
+NumeroID: 6456
+Producto: Marhuana
+UnidadesCompradas: 2
+PrecioTotalComprado: 10000
+
+NombreDelComprador: Daniel
+NumeroID: 6456
+Producto: Marhuana
+UnidadesCompradas: 2
+PrecioTotalComprado: 10000
+

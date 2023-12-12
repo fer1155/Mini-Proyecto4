@@ -14,4 +14,12 @@ public class CrearUsuarioModel {
     public LoginModel getLoginModel(){
         return modeloGeneral;
     }
+    
+    public void setiarUsuarioActual(Usuario usuarioo){
+        this.modeloGeneral.setiarUsuarioActual(usuarioo);
+    }
+    
+    public Usuario getUsuarioXContrasena(String usuarioContraseña){
+        return this.modeloGeneral.obtenerUsarioXContasena(usuarioContraseña);
+    }
 }

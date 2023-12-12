@@ -1,0 +1,10 @@
+NumDeReferencia: 001
+Nombre: Marhuana
+UnidadesDisponibles: 6
+Precio: 5000
+
+NumDeReferencia: 002
+Nombre: Bazuco
+UnidadesDisponibles: 7
+Precio: 500
+
