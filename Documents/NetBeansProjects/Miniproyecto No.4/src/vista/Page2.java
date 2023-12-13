@@ -47,7 +47,7 @@ public class Page2 extends javax.swing.JPanel {
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(204, 204, 255));
 
         modelo = new DefaultTableModel();
         modelo.addColumn("NumReferencia");

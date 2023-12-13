@@ -70,9 +70,8 @@ public class Page3 extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(69, 69, 69)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel1)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 444, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jButtonComprarProducto)
                         .addGap(18, 18, 18)
@@ -80,7 +79,8 @@ public class Page3 extends javax.swing.JPanel {
                         .addGap(18, 18, 18)
                         .addComponent(jButtonActInfo)
                         .addGap(18, 18, 18)
-                        .addComponent(jButtonRegistroPersonal)))
+                        .addComponent(jButtonRegistroPersonal))
+                    .addComponent(jScrollPane1))
                 .addContainerGap(74, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
