@@ -11,6 +11,7 @@ public class Main {
         LoginModel modeloLogin = new LoginModel();
         LoginController controladorLogin = new LoginController(vistaLogin, modeloLogin);
         controladorLogin.cargarInfo();
+
     }
     
 }

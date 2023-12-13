@@ -16,3 +16,27 @@ Producto: Marhuana
 UnidadesCompradas: 2
 PrecioTotalComprado: 10000
 
+NombreDelComprador: Julian
+NumeroID: 6969
+Producto: Bazuco
+UnidadesCompradas: 1
+PrecioTotalComprado: 500
+
+NombreDelComprador: 4554
+NumeroID: 545
+Producto: Bazuco
+UnidadesCompradas: 1
+PrecioTotalComprado: 500
+
+NombreDelComprador: valeria
+NumeroID: 11233423
+Producto: Marhuana
+UnidadesCompradas: 3
+PrecioTotalComprado: 15000
+
+NombreDelComprador: Benito Camelas
+NumeroID: 6969694
+Producto: Bazuco
+UnidadesCompradas: 2
+PrecioTotalComprado: 1000
+
