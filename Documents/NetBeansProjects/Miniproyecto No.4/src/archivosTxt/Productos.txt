@@ -1,0 +1,15 @@
+NumDeReferencia: 001
+Nombre: Camiseta
+UnidadesDisponibles: 20
+Precio: 30000
+
+NumDeReferencia: 002
+Nombre: Lapiz
+UnidadesDisponibles: 13
+Precio: 1000
+
+NumDeReferencia: 003
+Nombre: Manzana
+UnidadesDisponibles: 15
+Precio: 2000
+

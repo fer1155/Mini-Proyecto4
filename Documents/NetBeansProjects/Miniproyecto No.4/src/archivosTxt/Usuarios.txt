@@ -1,0 +1,18 @@
+Nombre: David
+NúmeroDeIdentificación: 234234
+Correo: david@.com
+Dirección: Mojica
+Password: fdg54
+
+Nombre: Valeria
+NúmeroDeIdentificación: 7656
+Correo: vale@sdf.com
+Dirección: Ciudad Jardin
+Password: fsfsd67
+
+Nombre: Juan
+NúmeroDeIdentificación: 234
+Correo: sdf
+Dirección: Calle 45
+Password: 1
+

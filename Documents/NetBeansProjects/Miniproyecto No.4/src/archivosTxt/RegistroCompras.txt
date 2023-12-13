@@ -1,0 +1,18 @@
+NombreDelComprador: Juan
+NumeroID: 234
+Producto: Camiseta
+UnidadesCompradas: 1
+PrecioTotalComprado: 30000
+
+NombreDelComprador: Juan
+NumeroID: 234
+Producto: Lapiz
+UnidadesCompradas: 2
+PrecioTotalComprado: 2000
+
+NombreDelComprador: Valeria
+NumeroID: 7656
+Producto: Manzana
+UnidadesCompradas: 5
+PrecioTotalComprado: 10000
+

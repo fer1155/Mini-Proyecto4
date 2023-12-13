@@ -1,0 +1,7 @@
+ID: 111324
+Nombre: Pablo
+Telefono: 3154353
+Dirección: Calle 46
+ProductoAVender: Camisetas
+ValorDelProductoAVender: 20000
+

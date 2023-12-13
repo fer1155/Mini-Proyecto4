@@ -1,0 +1,7 @@
+Nombre: Pablo
+ID: 111324
+Producto: Camisetas
+PrecioProducto: 20000
+CantidadPedido: 5
+PrecioTotalPedido: 100000
+
