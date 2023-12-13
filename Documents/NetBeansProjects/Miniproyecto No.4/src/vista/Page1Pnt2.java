@@ -34,7 +34,7 @@ public class Page1Pnt2 extends javax.swing.JPanel {
         jButtonEliminar = new javax.swing.JButton();
         jButtonCancelarEliminar = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(204, 204, 255));
 
         jLabel1.setText("Ingrese el ID del usuario a eliminar:");
 

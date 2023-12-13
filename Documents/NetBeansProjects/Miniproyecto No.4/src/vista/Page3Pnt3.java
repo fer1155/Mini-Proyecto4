@@ -34,6 +34,8 @@ public class Page3Pnt3 extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jButtonSalir = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(204, 204, 255));
+
         jTextAreaRegistroCompras.setColumns(20);
         jTextAreaRegistroCompras.setRows(5);
         jScrollPane1.setViewportView(jTextAreaRegistroCompras);

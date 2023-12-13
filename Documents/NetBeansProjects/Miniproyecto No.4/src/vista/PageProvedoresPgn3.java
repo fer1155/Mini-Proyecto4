@@ -45,6 +45,8 @@ public class PageProvedoresPgn3 extends javax.swing.JPanel {
         jButtonSolicitarPedido = new javax.swing.JButton();
         jButtonCancelar = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(204, 204, 255));
+
         jLabel1.setText("Nombre del provedor:");
 
         jLabel2.setText("jLabel2");

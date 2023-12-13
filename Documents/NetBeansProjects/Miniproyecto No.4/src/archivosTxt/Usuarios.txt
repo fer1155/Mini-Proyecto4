@@ -4,3 +4,21 @@ Correo: sdfsd
 Dirección: sdffd
 Password: sdfsdfsdf
 
+Nombre: Julian
+NúmeroDeIdentificación: 6969
+Correo: juli@gmail.com
+Dirección: primacho
+Password: 6969
+
+Nombre: pepe
+NúmeroDeIdentificación: 6969
+Correo: fdskjfd@gmail.com
+Dirección: klklk
+Password: 456
+
+Nombre: Benito Camelas
+NúmeroDeIdentificación: 6969694
+Correo: oenepollA
+Dirección: mi casa
+Password: pene
+

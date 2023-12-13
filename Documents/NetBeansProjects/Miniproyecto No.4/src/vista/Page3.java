@@ -39,6 +39,8 @@ public class Page3 extends javax.swing.JPanel {
         jButtonActInfo = new javax.swing.JButton();
         jButtonRegistroPersonal = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(204, 204, 255));
+
         modelo = new DefaultTableModel();
         modelo.addColumn("NumReferencia");
         modelo.addColumn("Nombre");

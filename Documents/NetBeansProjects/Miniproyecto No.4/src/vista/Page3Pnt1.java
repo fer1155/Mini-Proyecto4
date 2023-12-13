@@ -45,6 +45,8 @@ public class Page3Pnt1 extends javax.swing.JPanel {
         SpinnerNumberModel model = new SpinnerNumberModel(0, 0, Integer.MAX_VALUE, 1);
         jSpinner1 = new javax.swing.JSpinner(model);
 
+        setBackground(new java.awt.Color(204, 204, 255));
+
         jLabel1.setText("Producto:");
 
         jLabel2.setText("jLabel2");

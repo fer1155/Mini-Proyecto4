@@ -44,6 +44,8 @@ public class Page2Pnt1 extends javax.swing.JPanel {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
 
+        jPanel1.setBackground(new java.awt.Color(204, 204, 255));
+
         jLabel1.setText("NumReferencia");
 
         jLabel2.setText("Nombre");

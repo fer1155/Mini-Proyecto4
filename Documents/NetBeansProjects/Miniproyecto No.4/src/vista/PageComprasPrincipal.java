@@ -32,7 +32,7 @@ public class PageComprasPrincipal extends javax.swing.JPanel {
         jTextAreaCompras = new javax.swing.JTextArea();
         jLabel1 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(204, 204, 255));
 
         jTextAreaCompras.setColumns(20);
         jTextAreaCompras.setRows(5);

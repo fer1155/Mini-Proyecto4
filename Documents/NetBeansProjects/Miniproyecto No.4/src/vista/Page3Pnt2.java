@@ -40,6 +40,8 @@ public class Page3Pnt2 extends javax.swing.JPanel {
         jLabel4 = new javax.swing.JLabel();
         jTextField4 = new javax.swing.JTextField();
 
+        setBackground(new java.awt.Color(204, 204, 255));
+
         jButtonActualizar.setText("Actualizar");
 
         jButtonCancelar.setText("Cancelar");

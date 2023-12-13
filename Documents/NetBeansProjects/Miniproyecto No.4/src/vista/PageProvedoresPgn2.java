@@ -44,6 +44,8 @@ public class PageProvedoresPgn2 extends javax.swing.JPanel {
         jLabel6 = new javax.swing.JLabel();
         jTextField6 = new javax.swing.JTextField();
 
+        setBackground(new java.awt.Color(204, 204, 255));
+
         jLabel1.setText("ID:");
 
         jLabel2.setText("Nombre:");

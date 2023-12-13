@@ -43,6 +43,8 @@ public class Page2Pnt2 extends javax.swing.JPanel {
         jButtonActualizarProducto = new javax.swing.JButton();
         jButtonCancelarActualizar = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(204, 204, 255));
+
         jLabel1.setText("NumReferencia");
 
         jTextField1.addActionListener(new java.awt.event.ActionListener() {

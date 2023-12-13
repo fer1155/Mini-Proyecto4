@@ -45,6 +45,8 @@ public class PagePedidosPgn2 extends javax.swing.JPanel {
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(204, 204, 255));
+
         jLabel1.setText("Proveedor:");
 
         jLabel2.setText("jLabel2");
