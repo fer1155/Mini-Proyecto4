@@ -44,7 +44,7 @@ public class LoginController {
                 controladorRegistrarUsuario = new CrearUsuarioController(vistaRegistrarUsuario, modeloRegistrarUsuario);
                 vista.dispose();
             }
-            if(e.getActionCommand().equalsIgnoreCase("INGRESAR")){
+            if(e.getActionCommand().equalsIgnoreCase("Iniciar sesión")){
                 Usuario adminObtenido = modelo.obtenerAdmin(vista.getNombreTextField().getText(), vista.getContrasenaPasswordFiel().getText());
                 Usuario usuarioObtenido = modelo.obtenerUsario(vista.getNombreTextField().getText(), vista.getContrasenaPasswordFiel().getText());
                 
