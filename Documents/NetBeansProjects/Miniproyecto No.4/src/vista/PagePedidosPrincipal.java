@@ -35,7 +35,7 @@ public class PagePedidosPrincipal extends javax.swing.JPanel {
         jButtonActualizarPedido = new javax.swing.JButton();
         jButtonEliminar = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(204, 204, 255));
 
         modelo = new DefaultTableModel();
         modelo.addColumn("Provedor");
@@ -58,14 +58,14 @@ public class PagePedidosPrincipal extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(110, 110, 110)
+                        .addGap(215, 215, 215)
                         .addComponent(jButtonActualizarPedido)
-                        .addGap(26, 26, 26)
+                        .addGap(58, 58, 58)
                         .addComponent(jButtonEliminar))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(43, 43, 43)
+                        .addGap(49, 49, 49)
                         .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 614, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(63, Short.MAX_VALUE))
+                .addContainerGap(57, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
