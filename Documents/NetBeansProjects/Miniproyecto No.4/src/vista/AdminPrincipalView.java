@@ -26,7 +26,7 @@ public class AdminPrincipalView extends javax.swing.JFrame {
     
     //create border
     Border defaul_border = BorderFactory.createMatteBorder(0, 0, 3, 0, new Color(153,153,153));
-    Border red_border = BorderFactory.createMatteBorder(0, 0, 3, 0, Color.red);
+    Border red_border = BorderFactory.createMatteBorder(0, 0, 3, 0, new Color(0, 0, 102));
 
     //create an array of Jbuttons
     JButton[] buttons;
@@ -76,9 +76,10 @@ public class AdminPrincipalView extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(204, 204, 255));
 
         jPanel2.setBackground(new java.awt.Color(204, 204, 255));
+        jPanel2.setForeground(new java.awt.Color(255, 255, 255));
 
         jButton1.setFont(new java.awt.Font("Verdana", 0, 13)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(153, 153, 153));
+        jButton1.setForeground(new java.awt.Color(0, 0, 102));
         jButton1.setText("Clientes");
         jButton1.setBorder(null);
         jButton1.setContentAreaFilled(false);
@@ -91,7 +92,7 @@ public class AdminPrincipalView extends javax.swing.JFrame {
         });
 
         jButton2.setFont(new java.awt.Font("Verdana", 0, 13)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(153, 153, 153));
+        jButton2.setForeground(new java.awt.Color(0, 0, 102));
         jButton2.setText("Proveedores");
         jButton2.setBorder(null);
         jButton2.setContentAreaFilled(false);
@@ -104,7 +105,7 @@ public class AdminPrincipalView extends javax.swing.JFrame {
         });
 
         jButton4.setFont(new java.awt.Font("Verdana", 0, 13)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(153, 153, 153));
+        jButton4.setForeground(new java.awt.Color(0, 0, 102));
         jButton4.setText("Productos");
         jButton4.setBorder(null);
         jButton4.setContentAreaFilled(false);
@@ -117,7 +118,7 @@ public class AdminPrincipalView extends javax.swing.JFrame {
         });
 
         jButton5.setFont(new java.awt.Font("Verdana", 0, 13)); // NOI18N
-        jButton5.setForeground(new java.awt.Color(153, 153, 153));
+        jButton5.setForeground(new java.awt.Color(0, 0, 102));
         jButton5.setText("Compras");
         jButton5.setBorder(null);
         jButton5.setContentAreaFilled(false);
@@ -130,7 +131,7 @@ public class AdminPrincipalView extends javax.swing.JFrame {
         });
 
         jButton6.setFont(new java.awt.Font("Verdana", 0, 13)); // NOI18N
-        jButton6.setForeground(new java.awt.Color(153, 153, 153));
+        jButton6.setForeground(new java.awt.Color(0, 0, 102));
         jButton6.setText("Pedidos");
         jButton6.setBorder(null);
         jButton6.setContentAreaFilled(false);

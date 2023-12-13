@@ -48,15 +48,15 @@ public class CrearUsuarioView extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 255));
 
-        jLabel1.setText("Nombre de Usuario");
+        jLabel1.setText("Nombre de Usuario:");
 
-        jLabel2.setText("numId");
+        jLabel2.setText("numId:");
 
-        jLabel3.setText("Correo");
+        jLabel3.setText("Correo:");
 
-        jLabel4.setText("Direccion");
+        jLabel4.setText("Direccion:");
 
-        jLabel5.setText("Contraseña");
+        jLabel5.setText("Contraseña:");
 
         numIdTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

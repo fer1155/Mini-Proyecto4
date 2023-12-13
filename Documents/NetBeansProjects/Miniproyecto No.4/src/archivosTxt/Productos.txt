@@ -1,10 +1,15 @@
 NumDeReferencia: 001
-Nombre: Marhuana
-UnidadesDisponibles: 6
-Precio: 5000
+Nombre: Camiseta
+UnidadesDisponibles: 20
+Precio: 30000
 
 NumDeReferencia: 002
-Nombre: Bazuco
-UnidadesDisponibles: 7
-Precio: 500
+Nombre: Lapiz
+UnidadesDisponibles: 13
+Precio: 1000
+
+NumDeReferencia: 003
+Nombre: Manzana
+UnidadesDisponibles: 15
+Precio: 2000
 

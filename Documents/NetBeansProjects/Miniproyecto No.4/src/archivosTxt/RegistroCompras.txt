@@ -1,42 +1,18 @@
-NombreDelComprador: Pablito
-NumeroID: 132341
-Producto: Marhuana
-UnidadesCompradas: 2
-PrecioTotalComprado: 10000
-
-NombreDelComprador: Daniel
-NumeroID: 6456
-Producto: Marhuana
-UnidadesCompradas: 2
-PrecioTotalComprado: 10000
-
-NombreDelComprador: Daniel
-NumeroID: 6456
-Producto: Marhuana
-UnidadesCompradas: 2
-PrecioTotalComprado: 10000
-
-NombreDelComprador: Julian
-NumeroID: 6969
-Producto: Bazuco
+NombreDelComprador: Juan
+NumeroID: 234
+Producto: Camiseta
 UnidadesCompradas: 1
-PrecioTotalComprado: 500
+PrecioTotalComprado: 30000
 
-NombreDelComprador: 4554
-NumeroID: 545
-Producto: Bazuco
-UnidadesCompradas: 1
-PrecioTotalComprado: 500
-
-NombreDelComprador: valeria
-NumeroID: 11233423
-Producto: Marhuana
-UnidadesCompradas: 3
-PrecioTotalComprado: 15000
-
-NombreDelComprador: Benito Camelas
-NumeroID: 6969694
-Producto: Bazuco
+NombreDelComprador: Juan
+NumeroID: 234
+Producto: Lapiz
 UnidadesCompradas: 2
-PrecioTotalComprado: 1000
+PrecioTotalComprado: 2000
+
+NombreDelComprador: Valeria
+NumeroID: 7656
+Producto: Manzana
+UnidadesCompradas: 5
+PrecioTotalComprado: 10000
 

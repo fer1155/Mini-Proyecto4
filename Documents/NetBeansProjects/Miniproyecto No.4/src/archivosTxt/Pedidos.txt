@@ -1,21 +1,7 @@
-Nombre: Pabloxxx
-ID: 453
-Producto: SDFFD
-PrecioProducto: 1233
-CantidadPedido: 6
-PrecioTotalPedido: 7398
-
-Nombre: Pabloxxx
-ID: 453
-Producto: SDFFD
-PrecioProducto: 1233
-CantidadPedido: 2
-PrecioTotalPedido: 2466
-
-Nombre: Oscar
-ID: 56546
-Producto: Lapices
-PrecioProducto: 2000
-CantidadPedido: 4
-PrecioTotalPedido: 8000
+Nombre: Pablo
+ID: 111324
+Producto: Camisetas
+PrecioProducto: 20000
+CantidadPedido: 5
+PrecioTotalPedido: 100000
 
