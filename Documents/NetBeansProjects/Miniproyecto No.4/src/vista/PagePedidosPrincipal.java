@@ -47,8 +47,10 @@ public class PagePedidosPrincipal extends javax.swing.JPanel {
         jTablePedidos.setModel(modelo);
         jScrollPane4.setViewportView(jTablePedidos);
 
+        jButtonActualizarPedido.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jButtonActualizarPedido.setText("Actualizar Pedido");
 
+        jButtonEliminar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jButtonEliminar.setText("Eliminar Pedido");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -58,9 +60,9 @@ public class PagePedidosPrincipal extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(215, 215, 215)
+                        .addGap(203, 203, 203)
                         .addComponent(jButtonActualizarPedido)
-                        .addGap(58, 58, 58)
+                        .addGap(49, 49, 49)
                         .addComponent(jButtonEliminar))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(49, 49, 49)
@@ -76,7 +78,7 @@ public class PagePedidosPrincipal extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonActualizarPedido)
                     .addComponent(jButtonEliminar))
-                .addContainerGap(54, Short.MAX_VALUE))
+                .addContainerGap(50, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

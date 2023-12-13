@@ -153,16 +153,6 @@ public class AdminPrincipalController {
                 vista.mostrarPestanaPedidosPrincipal();
             }
             
-            /*
-            if(e.getActionCommand().equalsIgnoreCase("Cargar info (.txt)")){
-                if(cargoInfo == false){
-                    
-                    cargoInfo = true;
-                }else{
-                    JOptionPane.showMessageDialog(null, "La informacion se cargo previamente", "Info", JOptionPane.INFORMATION_MESSAGE);
-                }   
-            }*/
-            
             if(e.getActionCommand().equalsIgnoreCase("Cerrar sesion")){
                 vistaLogin = new LoginView();
                 controladorLogin = new LoginController(vistaLogin, modelo.getLoginModel());

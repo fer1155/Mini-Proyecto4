@@ -38,6 +38,8 @@ public class PageComprasPrincipal extends javax.swing.JPanel {
         jTextAreaCompras.setRows(5);
         jScrollPane1.setViewportView(jTextAreaCompras);
 
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 102));
         jLabel1.setText("Registro de compras");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -58,7 +60,7 @@ public class PageComprasPrincipal extends javax.swing.JPanel {
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(37, Short.MAX_VALUE))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
